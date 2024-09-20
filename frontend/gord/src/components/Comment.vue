@@ -1,0 +1,95 @@
+<script setup>
+import Button from './Button.vue'  
+
+const props = defineProps([
+    "name",
+    "date",
+    'likes'
+])
+</script>
+
+<template>
+    <article>
+        <header>
+            <span class="name">{{ props.name }}</span>
+            <span class="pubdate">Publié le <time datetime="">{{ props.date }}</time></span>
+        </header>
+        <br>
+        <div class="content">
+            <slot></slot>
+        </div>
+        <br>
+        <footer>
+            <Button type="square-v2">
+                <img src="./icons/like.svg" alt="Search" class="like-icon">
+            </Button>
+            <span class="likes">{{ props.likes }}</span>
+        </footer>
+    </article>
+</template>
+
+<style scoped>
+article {
+    width: 33.8em;
+    margin-top: 3em;
+    margin-left: 7em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.content {
+    color: #f5f5f5;
+    background: #1C1A1A;
+    font-family: "Roboto", system-ui;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    width: 30em;
+    height: 6em;
+    padding: 3em;
+    border-radius: 14px;
+}
+
+.like-icon {
+    width: 30px;
+    height: 30px;
+}
+
+time, .likes {
+    color: #00ff00;
+}
+
+.name {
+  font-family: "Roboto", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+}
+
+.likes {
+    color: #00ff00;
+    font-family: "Roboto Mono", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.pubdate {
+    font-family: "Roboto", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+}
+</style>

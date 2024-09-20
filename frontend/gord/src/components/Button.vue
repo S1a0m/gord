@@ -5,11 +5,10 @@ const props = defineProps([
 </script>
 
 <template>
-    <div :class="props.type">
-        <slot>
-        
+    <button :class="props.type">
+        <slot>  
         </slot>
-    </div>
+    </button>
 </template>
 
 <style lang="scss" scoped>
@@ -45,11 +44,23 @@ $banner-buttons-backg: #0A0A0A;
     @include buttonSize($square-v1-size, $subscribe-button-width, $banner-buttons-backg, solid);
 }
 
+.menu-button {
+    @include buttonSize($square-v1-size, 200px, $banner-buttons-backg);
+}
+
+.inside-button {
+    @include buttonSize($square-v2-size, auto, $banner-buttons-backg, solid);
+    padding: {
+        left: 3em;
+        right: 3em;
+    }
+}
+
 .square-v2 {
     @include buttonSize($square-v2-size, $square-v2-size, $button-backg, solid);
 }
 
-div:hover {
+button:hover {
     background: #505050;
 }
 </style>

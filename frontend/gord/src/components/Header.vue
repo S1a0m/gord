@@ -63,10 +63,6 @@ import Button from './Button.vue'
     img {
         height: 40px;
         width: 40px;
-        margin: {
-            top: 0.4em;
-            left: 0.4em;
-        }
     }
 
     .subscribe {
@@ -76,9 +72,5 @@ import Button from './Button.vue'
         font-weight: bold;
         font-style: normal;
         font-size: 20px;
-        margin: {
-            top: 0.8em;
-            left: 1.3em;
-        }
     }
 </style>

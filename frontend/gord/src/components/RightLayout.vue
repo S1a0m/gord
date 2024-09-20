@@ -25,9 +25,5 @@ aside {
 .robot-button {
     height: 40px;
     width: 40px;
-    margin: {
-        top: 12%;
-        left: 12%;
-    }
 }
 </style>

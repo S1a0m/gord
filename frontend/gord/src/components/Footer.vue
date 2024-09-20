@@ -41,6 +41,7 @@
 
 
     #footer {
+        margin-top: 4em;
         background: $footer-background-color;
         height: $footer-height;
         padding: {

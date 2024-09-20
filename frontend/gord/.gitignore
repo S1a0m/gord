@@ -30,3 +30,5 @@ coverage
 *.tsbuildinfo
 global.style
 test.css
+./src/views/ProjectDetailsView.vue
+./src/views/TutorialDetailsView.vue
