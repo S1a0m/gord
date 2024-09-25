@@ -1,11 +1,19 @@
 <script setup>
+import { ref } from 'vue';
+import MenuG from './MenuG.vue';
+
+const showMenu = ref(false);
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+}
 </script>
 
 <template>
     <aside>
         <slot></slot>
         <div class="menu">
-            <button class="menu-button" onclick="toggleMenu()">
+            <button class="menu-button" @click="toggleMenu">
                 <div class="menu-icon"></div>
                 <div class="menu-icon"></div>
                 <div class="menu-icon"></div>
@@ -13,17 +21,20 @@
             </button>
         </div>
     </aside>
+    <Transition>
+      <MenuG v-if="showMenu"/>
+    </Transition>
 </template>
 
 <style lang="scss" scoped>
 aside {
-    width: 14vw;
+    width: 15vw;
     margin: 1em;
 }
 
 .menu {
-    margin-left: 11em;
-    margin-top: 35vw;
+    margin-left: 12em;
+    margin-top: 37.9vw;
 }
 
 .menu-button {
@@ -74,4 +85,18 @@ aside {
       transform: translateY(-9px) rotate(-45deg);
     }
 
+.v-enter-active,
+.v-leave-active {
+  transition: 500ms;
+}
+
+.v-enter-from {
+  opacity: 0;
+  transform: translateX(-20em);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-20em);
+}
 </style>

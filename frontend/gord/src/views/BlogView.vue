@@ -29,7 +29,7 @@ import BlogArticle from '../components/BlogArticle.vue'
       </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .section {
   margin-bottom: 2em;
 }
@@ -39,24 +39,10 @@ p {
   padding-right: 10em;
   font-size: 16px;
   color: #f5f5f5;
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.avatar {
-  border-radius: 14px;
-  width: 411px;
-  height: 331px;
-}
-
-.go-projects {
-  margin-top: 4em;
-  margin-bottom: 4em;
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font: {
+    family: "Roboto Mono", monospace;
+    optical-sizing: auto;
+    style: normal;
+  }
 }
 </style>

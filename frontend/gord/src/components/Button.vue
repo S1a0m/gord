@@ -45,7 +45,7 @@ $banner-buttons-backg: #0A0A0A;
 }
 
 .menu-button {
-    @include buttonSize($square-v1-size, 200px, $banner-buttons-backg);
+    @include buttonSize($square-v1-size, 250px, $banner-buttons-backg);
 }
 
 .inside-button {
@@ -60,7 +60,14 @@ $banner-buttons-backg: #0A0A0A;
     @include buttonSize($square-v2-size, $square-v2-size, $button-backg, solid);
 }
 
-button:hover {
-    background: #505050;
+button {
+    transition: {
+        property: all;
+        duration: 400ms;
+    }
+    &:hover {
+        background: #505050;
+    }
 }
+
 </style>

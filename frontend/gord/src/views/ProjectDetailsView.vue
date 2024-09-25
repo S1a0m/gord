@@ -1,7 +1,12 @@
+<script setup>
+import MentionsPolitiques from '../components/MentionsPolitiques.vue'
+</script>
+
 <template>
-  </template>
+  <MentionsPolitiques />
+</template>
   
-  <style>
+<style lang="scss"  scoped>
  
-  </style>
+</style>
   

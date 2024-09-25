@@ -3,6 +3,7 @@ import Button from './Button.vue'
 </script>
 
 <template>
+  <div class="container">
     <div class="menu">
       <nav>
         <RouterLink to="/"><Button type="menu-button"><span>Home</span></Button></RouterLink>
@@ -14,9 +15,17 @@ import Button from './Button.vue'
         <RouterLink to="/faq"><Button type="menu-button"><span>FAQ</span></Button></RouterLink>
       </nav>
     </div>
+  </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.container {
+  position: fixed;
+  left: 19em;
+  top: 9em;
+  z-index: 3;
+}
+
 nav {
   display: flex;
   flex-direction: column;
@@ -28,21 +37,22 @@ nav {
   align-items: center;
   justify-content: center;
   background: #1C1A1A;
-  width: 20em;
-  height: 80vh;
+  width: 25em;
+  min-height: 80vh;
   border-radius: 14px;
-  /*border-style: solid;*/
   border-color: #288F9E;
-  position: fixed;
-  margin-left: 11em;
 }
 
 span {
   display: block;
   color: #288F9E;
-  font-family: "Roboto", system-ui;
+  font-family: "Roboto Mono", system-ui;
   font-weight: bold;
   font-style: normal;
   font-size: 32px;
 }
+/*
+.active {
+
+}*/
 </style>

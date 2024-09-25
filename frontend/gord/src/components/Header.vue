@@ -1,8 +1,19 @@
 <script setup>
+import { ref } from 'vue';
 import Button from './Button.vue'  
+import SubscribePopup from './SubscribePopup.vue';
+
+const showSubscribePopup = ref(false);
+
+const toggleSubscribePopup = () => {
+    showSubscribePopup.value = !showSubscribePopup.value;
+}
 </script>
 
 <template>
+    <Transition>
+        <SubscribePopup v-if="showSubscribePopup"/>
+    </Transition>
     <div id="banner">
         <div id="logo">
             Gord
@@ -11,7 +22,7 @@ import Button from './Button.vue'
             <Button type="banner-button">
                 <img src="./icons/search.svg" alt="Search">
             </Button>
-            <Button type="subscribe-button">
+            <Button type="subscribe-button" @click="toggleSubscribePopup">
                 <span class="subscribe">Subscribe</span>
             </Button>
             <Button type="banner-button">
@@ -73,4 +84,19 @@ import Button from './Button.vue'
         font-style: normal;
         font-size: 20px;
     }
+
+.v-enter-active,
+.v-leave-active {
+  transition: 500ms;
+}
+
+.v-enter-from {
+  opacity: 0;
+  transform: translateY(-20em);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(-20em);
+}
 </style>

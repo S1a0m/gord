@@ -1,6 +1,7 @@
 <script setup>
 import ArticleBase from '../components/ArticleBase.vue'
 import Appreciations from './Appreciations.vue'
+import BlogSummary from './BlogSummary.vue';
 
 const props = defineProps([
     'section',
@@ -16,6 +17,7 @@ const props = defineProps([
             <header>
                 <span class="pubdate">Publié le <time datetime="">{{ props.time }}</time></span>
             </header>
+            <BlogSummary />
             <div class="content">
                 <slot></slot>
             </div>
@@ -26,16 +28,17 @@ const props = defineProps([
     </ArticleBase>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 time {
     color: #00ff00;
 }
 
 .pubdate {
-    font-family: "Roboto Mono", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+  font: {
+    family: "Roboto Mono", system-ui;
+    optical-sizing: auto;
+    style: normal;
+    weight: 300;
+  }
 }
-
 </style>

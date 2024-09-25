@@ -17,8 +17,7 @@ const props = defineProps([
   </div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
 .container {
   display: flex;
 }
@@ -29,35 +28,29 @@ section {
 
 h4 {
   color: #00ff00;
-  margin-top: 1em;
-  margin-bottom: 1em;
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 20px;
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
+  font: {
+    family: "Roboto Mono", system-ui;
+    optical-sizing: auto;
+    style: normal;
+    size: 20px;
+  }
 }
 
 .dollar {
     color: #f5f5f5;
 }
 
-.section {
-    color: #134480;
-
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 20px;
-}
-
-.article {
-    color: #288F9E;
-    margin-top: 1em;
-
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 20px;
+.section { /**Agit directement sur le composant appelant */
+  color: #134480;
+  font-size: 20px;
+  font: {
+    family: "Roboto", monospace;
+    optical-sizing: auto;
+    style: normal;
+  }
 }
 </style>

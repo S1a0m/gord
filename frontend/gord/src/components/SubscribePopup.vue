@@ -16,7 +16,7 @@ import Button from './Button.vue'
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .submit {
     display: block;
     color: #288F9E;
@@ -56,16 +56,21 @@ label {
     height: 14em;
     border-radius: 14px;
     border-color: #288F9E;
+    position: absolute;
+    background: #1C1A1A;
+    left: 40em;
+    top: 20px;
 }
 
 form {
     margin-left: 2.1em;
     margin-top: 4em;
-}
 
-form div {
-    margin-top: 0.8em;
-    display: flex;
-    gap: 1em;
+    div {
+        margin-top: 0.8em;
+        display: flex;
+        gap: 1em;
+        padding-right: 2em;
+    }
 }
 </style>

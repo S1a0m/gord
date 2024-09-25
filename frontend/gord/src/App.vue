@@ -45,16 +45,10 @@ const pageTitle = computed(() => {
     <hr class="hr-two">
     <RightLayout>
       <div class="right-layout">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium<br><a href="#">&#10140;</a>
         <br><br>
-        Lorem ipsum dolor sit amet
+        Lorem ipsum dolor sit amet<br><a href="#">&#10140;</a>
         <br><br>
-        Orem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-        <br><br>
-        Lorem ipsum dolor sit amet
-        <br><br>
-        Sed ut perspiciatis unde
-        <br>
         Voir plus de détails en consultant mon <RouterLink to="/blog">blog</RouterLink>
       </div>
     </RightLayout>
@@ -62,16 +56,18 @@ const pageTitle = computed(() => {
   <Footer />
 </template>
   
-<style scoped>
+<style lang="scss" scoped>
 h2 {
   color: #00ff00;
-  margin-top: 2em;
-  margin-bottom: 1em;
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 20px;
+  margin: {
+    top: 2em;
+    bottom: 1em;
+  }
+  font: {
+    family: "Roboto Mono", monospace;
+    optical-sizing: auto;
+    style: normal;
+  }
 }
 
 main {
@@ -84,16 +80,22 @@ main {
   min-height: 90vh;
 }
 
-.right-layout, section {
-  padding: 1em;
-}
 
 .right-layout {
   margin-top: 2em;
   font-size: 15px;
-  font-family: "Roboto", system-ui;
-  font-weight: 300;
-  font-style: normal;
+  padding: 1em;
+  font: {
+    family: "Roboto", system-ui;
+    weight: 300;
+    style: normal;
+  }
+
+  
+}
+
+section {
+    padding: 1em;
 }
 
 hr {
@@ -113,7 +115,7 @@ hr {
   display: inline-block;
   width: 10px;
   height: 24px;
-  background-color: #f5f5f5; /* Même couleur que le texte */
+  background-color: #f5f5f5; 
   animation: blink 1s step-end infinite;
   vertical-align: bottom;
 }

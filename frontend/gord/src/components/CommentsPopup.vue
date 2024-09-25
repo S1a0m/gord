@@ -40,14 +40,22 @@ import Comment from './Comment.vue'
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
     border-style: solid;
     border-radius: 14px;
     border-color: #288F9E;
-    width: 60em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    background: #0A0A0A;
+    width: 50em;
+    height: 50vh;
+    overflow: auto;
+    margin-top: 2em;
+    left: 24em;
+    bottom: 20em;
+    padding: {
+        top: 2em;
+        bottom: 4em;
+    }
 }
 
 .submit {
@@ -66,13 +74,14 @@ import Comment from './Comment.vue'
 .ps-sub {
     display: flex;
     justify-content: space-between;
+    width: 590px;
 }
 
 textarea {
     padding: 1em;
     font-size: 20px;
-    height: 274px;
-    width: 697px;
+    height: 150px;
+    width: 550px;
     border-radius: 14px;
     background: #505050;
     color: #f5f5f5;
@@ -90,7 +99,7 @@ textarea {
     padding-right: 1em;
     font-size: 20px;
     height: 54px;
-    width: 389px;
+    width: 320px;
     border-radius: 14px;
     background: #505050;
     color: #f5f5f5;

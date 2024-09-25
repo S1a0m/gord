@@ -30,10 +30,11 @@ import ArticleBase from '../components/ArticleBase.vue'
       </div>
 </template>
 
-<style scoped>
-
-.section {
-  margin-bottom: 2em;
+<style lang="scss" scoped>
+.content {
+  .section {
+    margin-bottom: 2em;
+  }
 }
 
 .c-r {
@@ -46,15 +47,13 @@ import ArticleBase from '../components/ArticleBase.vue'
   font-size: 20px;
   color: #f5f5f5;
   background: #1C1A1A;
-  border-style: solid;
-  border-color: #288F9E;
-  border-radius: 14px;
-  border-width: 1px;
-
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
+  box-shadow: .1em .1em 2em #505050;
+  border: {
+    style: solid;
+    color: #288F9E;
+    radius: 14px;
+    width: 1px;
+  }
 }
 
 .testimony {
@@ -69,9 +68,12 @@ import ArticleBase from '../components/ArticleBase.vue'
 
 .go-projects {
   margin-top: 4em;
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
+  &, .certificates, .rewards, .testimony {
+    font: {
+      family: "Roboto Mono", monospace;
+      optical-sizing: auto;
+      style: normal;
+    }
+  }
 }
 </style>

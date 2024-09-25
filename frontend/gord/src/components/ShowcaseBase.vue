@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import Button from './Button.vue'  
+import { RouterLink } from 'vue-router';
+import Button from './Button.vue';
 
 const props = defineProps([
     'name',
@@ -30,7 +30,7 @@ const props = defineProps([
                 <span class="li"><RouterLink :to="props.details"><span class="nk">Voir plus ...</span></RouterLink></span>
             </div>
             <footer>
-                <Button type="inside-button">
+                <Button type="inside-button"  @click="toggleComments">
                     <span class="nbr-comments">{{ props.comments }} commentaire(s)</span>
                 </Button>
             </footer>
@@ -38,7 +38,7 @@ const props = defineProps([
     </article>
 </template>
   
-<style scoped>
+<style lang="scss" scoped>
 article {
     height: 300px;
     width: 300px;
@@ -47,6 +47,15 @@ article {
     border-width: 1px;
     border-radius: 14px;
     border-color: #288F9E;
+    box-shadow: .1em .1em .5em #505050;
+    transition: {
+        property: all;
+        duration: 1000ms;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .container {

@@ -28,7 +28,7 @@ const props = defineProps([
     </article>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 article {
     width: 33.8em;
     margin-top: 3em;
@@ -86,10 +86,12 @@ time, .likes {
 }
 
 .pubdate {
-    font-family: "Roboto", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
     font-size: 16px;
+    font: {
+        family: "Roboto Mono", system-ui;
+        optical-sizing: auto;
+        style: normal;
+        weight: 300;
+    }
 }
 </style>

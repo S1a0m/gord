@@ -1,4 +1,4 @@
-<script setup> 
+<script setup>
 </script>
 
 <template>
@@ -13,10 +13,10 @@
                     <span class="w-e">Email:</span><span>gord@gmail.com</span>
                 </p>
             </div>
-            <div class="mentions">
+            <div class="git-mentions">
                 <a href="https://github.com/S1a0m"><img src="./icons/signe-github.png" alt=""></a>
                 <br><br>
-                <span>
+                <span class="m-p" @click="toggleMp">
                     Mentions légales et <br>Politiques de confidentialité
                 </span>
             </div>
@@ -70,14 +70,14 @@
     }
 
     .contact {
-        background: #0A0A0A;
+        /*background: #0A0A0A;
         padding: 1em;
         border: {
             style: solid;
             color: #288F9E;
             radius: 14px;
             width: 1px;
-        }
+        }*/
         .name {
             color: #288F9E;
             font-family: "Roboto", system-ui;
@@ -93,12 +93,17 @@
         }
     }
 
-    .mentions span {
+    .m-p {
         color: #AC1D1D;
         font-size: 16px;
         font-family: "Roboto", system-ui;
         font-weight: 300;
         font-style: normal;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     img {

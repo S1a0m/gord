@@ -34,8 +34,7 @@ import ArticleBase from '../components/ArticleBase.vue'
       </div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
 .section {
   margin-bottom: 2em;
 }
@@ -45,9 +44,10 @@ p {
   padding-right: 10em;
   font-size: 16px;
   color: #f5f5f5;
-
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font: {
+    family: "Roboto Mono", monospace;
+    optical-sizing: auto;
+    style: normal;
+  }
 }
 </style>
