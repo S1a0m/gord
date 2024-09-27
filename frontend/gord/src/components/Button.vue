@@ -41,6 +41,10 @@ $banner-buttons-backg: #0A0A0A;
 }
 
 .subscribe-button {
+    @include buttonSize($square-v1-size, $subscribe-button-width, $banner-buttons-backg);
+}
+
+.comment-button {
     @include buttonSize($square-v1-size, $subscribe-button-width, $banner-buttons-backg, solid);
 }
 

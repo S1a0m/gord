@@ -17,7 +17,7 @@ const props = defineProps([
         <div class="container">
             <header>
                 <Button type="square-v2">
-                    <img src="./icons/like.svg" alt="Search" class="like-icon">
+                    <img src="./icons/like_blue.svg" alt="Search" class="like-icon">
                 </Button>
                 <div class="l-p">
                     <span class="likes">{{ props.likes }}</span>

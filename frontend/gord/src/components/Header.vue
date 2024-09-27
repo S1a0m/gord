@@ -8,6 +8,18 @@ const showSubscribePopup = ref(false);
 const toggleSubscribePopup = () => {
     showSubscribePopup.value = !showSubscribePopup.value;
 }
+
+const emit = defineEmits([ 'toggle-search' ])
+
+const toggleSearch = () => {
+    emit('toggle-search');
+}
+
+const mode = ref(false);
+
+const toggleMode = () => {
+    mode.value = !mode.value;
+}
 </script>
 
 <template>
@@ -19,14 +31,15 @@ const toggleSubscribePopup = () => {
             Gord
         </div>
         <div>
-            <Button type="banner-button">
-                <img src="./icons/search.svg" alt="Search">
+            <Button type="banner-button" @click="toggleSearch">
+                <img src="./icons/search_blue.svg" alt="Search">
             </Button>
             <Button type="subscribe-button" @click="toggleSubscribePopup">
                 <span class="subscribe">Subscribe</span>
             </Button>
-            <Button type="banner-button">
-                <img src="./icons/dark_mode.svg" alt="Theme">
+            <Button type="banner-button" @click="toggleMode">
+                <img src="./icons/light_mode_blue.svg" alt="Theme" v-if="mode === false">
+                <img src="./icons/dark_mode_blue.svg" alt="Theme" v-else>
             </Button>
         </div>
     </div>

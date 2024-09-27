@@ -28,7 +28,7 @@ const toggleMenu = () => {
 
 <style lang="scss" scoped>
 aside {
-    width: 15vw;
+    width: 16vw;
     margin: 1em;
 }
 

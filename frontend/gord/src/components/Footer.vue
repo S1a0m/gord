@@ -1,4 +1,16 @@
 <script setup>
+import { ref } from 'vue';
+import MentionsPolitiques from './MentionsPolitiques.vue';
+
+const showMp = ref(false);
+
+const showMpg = () => {
+  showMp.value = true;
+}
+
+const closeMpg = () => {
+  showMp.value = false;
+}
 </script>
 
 <template>
@@ -16,7 +28,7 @@
             <div class="git-mentions">
                 <a href="https://github.com/S1a0m"><img src="./icons/signe-github.png" alt=""></a>
                 <br><br>
-                <span class="m-p" @click="toggleMp">
+                <span class="m-p" @click="showMpg">
                     Mentions légales et <br>Politiques de confidentialité
                 </span>
             </div>
@@ -24,6 +36,9 @@
         <div>
             © 2024 Gord. Tous droits réservés.
         </div>
+        <Transition>
+            <MentionsPolitiques v-if="showMp" @close-mp="closeMpg"/>
+        </Transition>
     </div>
 </template>
 
@@ -125,4 +140,19 @@
             font-style: italic;
         }
     }
+
+.v-enter-active,
+.v-leave-active {
+  transition: 500ms ease-out;
+}
+
+.v-enter-from {
+  opacity: 0;
+  transform: scale(1.1)/*translateX(80em)*/;
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: scale(1.1)/*translateX(80em)*/;
+}
 </style>

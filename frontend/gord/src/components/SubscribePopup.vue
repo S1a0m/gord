@@ -5,9 +5,9 @@ import Button from './Button.vue'
 <template>
     <div class="subscribe-form">
         <form action="">
-            <label for="email">Enter your mail here</label>
+            <!--<label for="email">Enter your mail here</label>-->
             <div>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" placeholder="Enter your mail here">
                 <Button type="subscribe-button">
                     <span class="submit">Submit</span>
                 </Button>
@@ -43,17 +43,17 @@ import Button from './Button.vue'
     font-style: normal;
 }
 
-label {
+/*label {
   font-family: "Roboto", system-ui;
   font-weight: 300;
   font-style: normal;
-  font-size: 24px;
-}
+  font-size: 20px;
+}*/
 
 .subscribe-form {
     border-style: solid;
     width: 37em;
-    height: 14em;
+    height: 11em;
     border-radius: 14px;
     border-color: #288F9E;
     position: absolute;

@@ -32,7 +32,7 @@ const props = defineProps([
 article {
     width: 33.8em;
     margin-top: 3em;
-    margin-left: 7em;
+    margin-left: 2em;
 }
 
 header {
@@ -73,7 +73,7 @@ time, .likes {
   font-family: "Roboto", system-ui;
   font-weight: 500;
   font-style: normal;
-  font-size: 32px;
+  font-size: 20px;
 }
 
 .likes {

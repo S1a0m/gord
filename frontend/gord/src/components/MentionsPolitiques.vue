@@ -1,6 +1,18 @@
+<script setup>
+import Button from './Button.vue';
+
+const emit = defineEmits([ 'close-mp' ])
+
+const closeMpg = () => {
+    emit('close-mp');
+}
+</script>
+
 <template>
-    <div>
+    <div class="">
         <pre>
+
+
             **Mentions légales**
 
             Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie<br>            numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs du site[Nom du site] les présentes mentions légales.
@@ -74,19 +86,55 @@
 
             #### **8. Modifications de la politique de confidentialité**
             Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les modifications seront publiées <br>            sur cette page et seront effectives dès leur mise en ligne.
+
+
         </pre>
+        <div class="options-mp">
+            <span class="button-mp">
+                <Button type="square-v2" @click="closeMpg">
+                    <img src="./icons/close_blue.svg" alt="">
+                </Button>
+            </span>
+        </div>
     </div>
 </template>
 
 <style lang="scss"  scoped>
-
 div {
     position: fixed;
     z-index: 4;
-    top: 8em;
-    left: 15em;
+    top: 6em;
+    left: 17em;
     height: 80vh;
     overflow: auto;
     color: #00ff00;
+    border-style: solid;
+    border-width: 1px;
+    /*background: rgba($color: #050505, $alpha: 1.0);*/
+    background-color: rgba(0, 0, 0, .8);
+}
+
+/*
+.close-mp {
+    font-weight: bold;
+    font-size: 32px;
+    color: #00ff00;
+}*/
+
+.options-mp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 4em;
+
+    span {
+        margin: 8px;
+    }
+}
+
+img {
+    width: 30px;
+    height: 30px;
 }
 </style>

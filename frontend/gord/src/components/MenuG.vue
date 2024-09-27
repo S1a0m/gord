@@ -6,7 +6,7 @@ import Button from './Button.vue'
   <div class="container">
     <div class="menu">
       <nav>
-        <RouterLink to="/"><Button type="menu-button"><span>Home</span></Button></RouterLink>
+        <RouterLink to="/"><Button type="menu-button"><span class="active">Home</span></Button></RouterLink>
         <RouterLink to="/about"><Button type="menu-button"><span>About</span></Button></RouterLink>
         <RouterLink to="/portfolio"><Button type="menu-button"><span>Portfolio</span></Button></RouterLink>
         <RouterLink to="/blog"><Button type="menu-button"><span>Blog</span></Button></RouterLink>
@@ -53,6 +53,7 @@ span {
 }
 /*
 .active {
-
+  color: #505050;
+  
 }*/
 </style>

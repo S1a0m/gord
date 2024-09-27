@@ -8,14 +8,14 @@ import Comment from './Comment.vue'
         <div class="comment-form">
             <form action="">
                 <div>
-                    <label for="comment">Comment</label>
-                    <textarea name="comment" id="comment"></textarea>
+                    <!--<label for="comment">Comment</label>-->
+                    <textarea name="comment" id="comment" placeholder="Comment"></textarea>
                     <br>
-                    <label for="pseudo">Pseudo</label>
+                    <!--<label for="pseudo">Pseudo</label>-->
                     <div class="ps-sub">
-                        <input type="text" name="pseudo" id="pseudo">
+                        <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
                         <div class="submit-button">
-                            <Button type="subscribe-button">
+                            <Button type="comment-button">
                                 <span class="submit">Submit</span>
                             </Button>
                         </div>
@@ -42,19 +42,19 @@ import Comment from './Comment.vue'
 
 <style lang="scss" scoped>
 .container {
+    /*border-right-style: solid;
+    border-bottom-style: solid;*/
     border-style: solid;
-    border-radius: 14px;
     border-color: #288F9E;
+    border-width: 1px;
     background: #0A0A0A;
-    width: 50em;
+    width: 38em;
     height: 50vh;
     overflow: auto;
     margin-top: 2em;
-    left: 24em;
-    bottom: 20em;
     padding: {
         top: 2em;
-        bottom: 4em;
+        bottom: 2em;
     }
 }
 
@@ -66,22 +66,23 @@ import Comment from './Comment.vue'
     font-style: normal;
     font-size: 20px;
 }
-
+/*
 .submit-button {
-    width: 9em;
-}
+    width: 13.5em;
+    background-color: red;
+}*/
 
 .ps-sub {
     display: flex;
     justify-content: space-between;
-    width: 590px;
+    width: 540px;
 }
 
 textarea {
     padding: 1em;
     font-size: 20px;
-    height: 150px;
-    width: 550px;
+    height: 6em;
+    width: 25em;
     border-radius: 14px;
     background: #505050;
     color: #f5f5f5;
@@ -111,16 +112,16 @@ textarea {
     font-style: normal;
 }
 
+/*
 label {
   font-family: "Roboto", system-ui;
   font-weight: 300;
   font-style: normal;
-  font-size: 24px;
-}
+  font-size: 20px;
+}*/
 
 .comment-form {
-    width: 650px;
-    margin-left: 7em;
+    margin-left: 2em;
 }
 
 form div {

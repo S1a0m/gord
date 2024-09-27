@@ -7,7 +7,7 @@ import Button from './Button.vue'
         <slot></slot>
         <div class="robot">
             <Button type="square-v1">
-                <img src="./icons/robot.svg" alt="" class="robot-button">
+                <img src="./icons/robot_blue.svg" alt="" class="robot-button">
             </Button>
         </div>
     </aside>

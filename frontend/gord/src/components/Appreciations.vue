@@ -19,7 +19,7 @@ const toggleComments = () => {
         <div class="footer">
             <div class="likes">
                 <Button type="square-v2">
-                    <img src="./icons/like.svg" alt="Search" class="like-icon">
+                    <img src="./icons/like_blue.svg" alt="Search" class="like-icon">
                 </Button>
                 <span>{{ props.likes }}</span>
             </div>
