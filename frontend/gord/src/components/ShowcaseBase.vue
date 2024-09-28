@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import Button from './Button.vue';
+import BlogArticle from '../components/BlogArticle.vue'
 
 const props = defineProps([
     'name',
@@ -10,6 +11,8 @@ const props = defineProps([
     'sommary',
     'details'
 ])
+
+const goOnReviews = `${props.details}/#reviews`;
 </script>
 
 <template>
@@ -30,9 +33,11 @@ const props = defineProps([
                 <span class="li"><RouterLink :to="props.details"><span class="nk">Voir plus ...</span></RouterLink></span>
             </div>
             <footer>
-                <Button type="inside-button"  @click="toggleComments">
-                    <span class="nbr-comments">{{ props.comments }} commentaire(s)</span>
-                </Button>
+                <RouterLink :to="goOnReviews">
+                    <Button type="inside-button"  @click="toggleComments">
+                        <span class="nbr-comments">{{ props.comments }} commentaire(s)</span>
+                    </Button>
+                </RouterLink>
             </footer>
         </div>
     </article>
@@ -42,12 +47,12 @@ const props = defineProps([
 article {
     height: 300px;
     width: 300px;
-    background-color: #1C1A1A;
+    background-color: var(--main-gray);
     border-style: solid;
     border-width: 1px;
     border-radius: 14px;
-    border-color: #288F9E;
-    box-shadow: .1em .1em .5em #505050;
+    border-color: var(--blue-light);
+    box-shadow: .1em .1em .5em var(--hover-gray);
     transition: {
         property: all;
         duration: 1000ms;
@@ -83,7 +88,7 @@ footer {
     width: 80%;
 }
 
-.nk {
+.nk, .sommary, .title {
     font-family: "Roboto Mono", system-ui;
 }
 
@@ -98,15 +103,15 @@ footer {
     font-weight: 500;
     font-style: normal;
     font-size: 16px;
-    color: #288F9E;
+    color: var(--blue-light);
 } 
 
 time, .likes {
-    color: #00ff00;
+    color: var(--hover-gray);
 }
 
 .likes {
-    color: #00ff00;
+    color: var(--hover-gray);
     font-family: "Roboto Mono", system-ui;
     font-optical-sizing: auto;
     font-weight: 700;

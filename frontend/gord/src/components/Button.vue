@@ -16,8 +16,8 @@ $square-v1-size: 54px;
 $square-v2-size: 42px;
 $subscribe-button-width: 145px;
 
-$button-backg: #1C1A1A;
-$banner-buttons-backg: #0A0A0A;
+$button-backg: var(--main-black);
+$banner-buttons-backg: var(--main-black);
 
 @mixin buttonSize($height: none, $width: none, $backg: none, $borderStyle: none) {
     height: $height;
@@ -26,7 +26,7 @@ $banner-buttons-backg: #0A0A0A;
     cursor: pointer;
     border: {
         style: $borderStyle;
-        color: #288F9E;
+        color: var(--blue-light);
         radius: 14px;
         width: 1px;
     }
@@ -70,7 +70,7 @@ button {
         duration: 400ms;
     }
     &:hover {
-        background: #505050;
+        background: var(--hover-gray);
     }
 }
 

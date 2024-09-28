@@ -24,10 +24,18 @@ const props = defineProps([
 
 section {
   margin-left: 1em;
+  padding-right: 10em;
+  font-size: 16px;
+  color: var(--main-white);
+  font: {
+    family: "Roboto Mono", monospace;
+    optical-sizing: auto;
+    style: normal;
+  }
 }
 
 h4 {
-  color: #00ff00;
+  color: var(--green-hack);
   margin: {
     top: 1em;
     bottom: 1em;
@@ -41,16 +49,23 @@ h4 {
 }
 
 .dollar {
-    color: #f5f5f5;
+    color: var(--main-white);
 }
 
-.section { /**Agit directement sur le composant appelant */
-  color: #134480;
+.section, .article { /**Agit directement sur le composant appelant */
   font-size: 20px;
   font: {
     family: "Roboto", monospace;
     optical-sizing: auto;
     style: normal;
   }
+}
+
+.section {
+  color: var(--blue-dark);
+}
+
+.article {
+  color: var(--blue-light);
 }
 </style>

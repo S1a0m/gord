@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref} from 'vue';
 import MenuG from './MenuG.vue';
 
 const showMenu = ref(false);
@@ -11,7 +11,6 @@ const toggleMenu = () => {
 
 <template>
     <aside>
-        <slot></slot>
         <div class="menu">
             <button class="menu-button" @click="toggleMenu">
                 <div class="menu-icon"></div>
@@ -20,9 +19,10 @@ const toggleMenu = () => {
                 <span>Menu</span>
             </button>
         </div>
+        <slot></slot>
     </aside>
     <Transition>
-      <MenuG v-if="showMenu"/>
+      <MenuG v-if="showMenu" @close-menu="toggleMenu"/>
     </Transition>
 </template>
 
@@ -33,14 +33,18 @@ aside {
 }
 
 .menu {
-    margin-left: 12em;
-    margin-top: 37.9vw;
+  margin-left: 14em;
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+  width: 5em;
+  position: sticky;
+  top: 1em;
 }
 
 .menu-button {
     background-color: transparent;
-    border: 2px solid #00FF00;
-    color: #00FF00;
+    border: 2px solid var(--green-hack);
+    color: var(--green-hack);
     font-size: 12px;
     padding: 10px 20px;
     cursor: pointer;
@@ -51,8 +55,8 @@ aside {
 }
 
 .menu-button:hover {
-    background-color: #00FF00;
-    color: black;
+    background-color: var(--green-hack);
+    color: var(--main-black);
 }
 
 .menu-button span {
@@ -63,13 +67,13 @@ aside {
     .menu-icon {
       width: 30px;
       height: 3px;
-      background-color: #00FF00;
+      background-color: var(--green-hack);
       margin: 6px auto;
       transition: all 0.3s;
     }
 
     .menu-button:hover .menu-icon {
-      background-color: black;
+      background-color: var(--main-black);
     }
 
     /* Menu icon animation */

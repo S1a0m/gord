@@ -1,29 +1,22 @@
 <script setup>
-import Button from './Button.vue' 
 </script>
 
 <template>
     <aside>
         <slot></slot>
-        <div class="robot">
-            <Button type="square-v1">
-                <img src="./icons/robot_blue.svg" alt="" class="robot-button">
-            </Button>
-        </div>
     </aside>
 </template>
 
 <style lang="scss" scoped>
 aside {
     width: 60vw;
-}
-
-.robot {
-    margin-top: 28em;
-}
-
-.robot-button {
-    height: 40px;
-    width: 40px;
+    margin-top: 2em;
+    font-size: 15px;
+    padding: 1em;
+    font: {
+        family: "Roboto Mono", system-ui;
+        weight: 300;
+        style: normal;
+    }
 }
 </style>

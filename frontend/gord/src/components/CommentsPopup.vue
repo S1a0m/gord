@@ -42,12 +42,10 @@ import Comment from './Comment.vue'
 
 <style lang="scss" scoped>
 .container {
-    /*border-right-style: solid;
-    border-bottom-style: solid;*/
     border-style: solid;
-    border-color: #288F9E;
+    border-color: var(--blue-light);
     border-width: 1px;
-    background: #0A0A0A;
+    background: var(--main-black);
     width: 38em;
     height: 50vh;
     overflow: auto;
@@ -60,17 +58,12 @@ import Comment from './Comment.vue'
 
 .submit {
     display: block;
-    color: #288F9E;
+    color: var(--blue-light);
     font-family: "Roboto", system-ui;
     font-weight: bold;
     font-style: normal;
     font-size: 20px;
 }
-/*
-.submit-button {
-    width: 13.5em;
-    background-color: red;
-}*/
 
 .ps-sub {
     display: flex;
@@ -84,8 +77,8 @@ textarea {
     height: 6em;
     width: 25em;
     border-radius: 14px;
-    background: #505050;
-    color: #f5f5f5;
+    background: var(--hover-gray);
+    color: var(--main-white);
     border-style: none;
     outline: none;
     resize: none;
@@ -102,8 +95,8 @@ textarea {
     height: 54px;
     width: 320px;
     border-radius: 14px;
-    background: #505050;
-    color: #f5f5f5;
+    background: var(--hover-gray);
+    color: var(--main-white);
     border-style: none;
     outline: none;
     font-family: "Roboto Mono", system-ui;
@@ -111,14 +104,6 @@ textarea {
     font-weight: 400;
     font-style: normal;
 }
-
-/*
-label {
-  font-family: "Roboto", system-ui;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 20px;
-}*/
 
 .comment-form {
     margin-left: 2em;

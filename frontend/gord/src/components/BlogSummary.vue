@@ -33,7 +33,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1C1A1A;
+  background: var(--main-gray);
   width: 42em;
   height: 20em;
   /*border-radius: 14px;
@@ -52,13 +52,13 @@ nav {
         content: '';
         display: block;
         height: 5px;
-        background: #288F9E;
+        background: var(--blue-light);
     }
 }
 
 a span {
   display: block;
-  color: #288F9E;
+  color: var(--blue-light);
   font-family: "Roboto Mono", system-ui;
   font-optical-sizing: auto;
   font-weight: 300;

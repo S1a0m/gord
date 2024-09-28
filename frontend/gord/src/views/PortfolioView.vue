@@ -43,14 +43,16 @@ import ArticleBase from '../components/ArticleBase.vue'
 }
 
 .certificates, .rewards, .testimony {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 0.5em;
   font-size: 20px;
-  color: #f5f5f5;
-  background: #1C1A1A;
-  box-shadow: .1em .1em 2em #505050;
+  color: var(--main-white);
+  background: var( --main-gray);
   border: {
     style: solid;
-    color: #288F9E;
+    color: var(--blue-light);
     radius: 14px;
     width: 1px;
   }

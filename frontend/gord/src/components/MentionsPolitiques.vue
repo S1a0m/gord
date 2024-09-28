@@ -100,32 +100,28 @@ const closeMpg = () => {
 </template>
 
 <style lang="scss"  scoped>
-div {
+pre {
     position: fixed;
     z-index: 4;
     top: 6em;
-    left: 17em;
+    left: 24em;
     height: 80vh;
     overflow: auto;
-    color: #00ff00;
+    color: var(--green-hack);
     border-style: solid;
     border-width: 1px;
-    /*background: rgba($color: #050505, $alpha: 1.0);*/
-    background-color: rgba(0, 0, 0, .8);
+    background-color: var(--mp-background);
 }
-
-/*
-.close-mp {
-    font-weight: bold;
-    font-size: 32px;
-    color: #00ff00;
-}*/
 
 .options-mp {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: fixed;
+    z-index: 4;
+    top: 5.1em;
+    left: 18.5em;
     width: 4em;
 
     span {

@@ -19,7 +19,7 @@ import Button from './Button.vue'
 <style lang="scss" scoped>
 .submit {
     display: block;
-    color: #288F9E;
+    color: var(--blue-light);
     font-family: "Roboto", system-ui;
     font-weight: bold;
     font-style: normal;
@@ -33,31 +33,24 @@ import Button from './Button.vue'
     height: 54px;
     width: 389px;
     border-radius: 14px;
-    background: #505050;
+    background: var(--hover-gray);
     border-style: none;
     outline: none;
-    color: #f5f5f5;
+    color: var(--main-white);
     font-family: "Roboto Mono", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
-/*label {
-  font-family: "Roboto", system-ui;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 20px;
-}*/
-
 .subscribe-form {
     border-style: solid;
     width: 37em;
     height: 11em;
     border-radius: 14px;
-    border-color: #288F9E;
+    border-color: var(--blue-light);
     position: absolute;
-    background: #1C1A1A;
+    background: var(--main-gray);
     left: 40em;
     top: 20px;
 }

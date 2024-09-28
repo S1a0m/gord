@@ -43,7 +43,7 @@ p {
   margin-top: 0.5em;
   padding-right: 10em;
   font-size: 16px;
-  color: #f5f5f5;
+  color: var(--main-white);
   font: {
     family: "Roboto Mono", monospace;
     optical-sizing: auto;

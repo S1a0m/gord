@@ -8,15 +8,15 @@ import ShowcaseBase from '../components/ShowcaseBase.vue'
         <div class="section">
           <ArticleBase active-page="projects" section-color="section" section="Programmation">
             <div class="programmation">
-              <ShowcaseBase likes="57" time="16/09/24" name="Projet 1" sommary="Contenu sommaire du projet" comments="03" details="/projects/project1"/>
-              <ShowcaseBase likes="11" time="16/09/24" name="Projet 2" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2"/>
+              <ShowcaseBase likes="57" time="16/09/24" name="Projet 1" sommary="Contenu sommaire du projet" comments="03" details="/projects/project1-details"/>
+              <ShowcaseBase likes="11" time="16/09/24" name="Projet 2" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
             </div>
           </ArticleBase>
         </div>
         <div class="section">
           <ArticleBase active-page="projects" section-color="section" section="Sécurité">
             <div class="security">
-              <ShowcaseBase likes="00" time="16/09/24" name="Projet 3" sommary="Contenu sommaire du projet" comments="00" details="/projects/project3"/>
+              <ShowcaseBase likes="00" time="16/09/24" name="Projet 3" sommary="Contenu sommaire du projet" comments="00" details="/projects/project3-details"/>
             </div>
           </ArticleBase>
         </div>
@@ -36,11 +36,11 @@ import ShowcaseBase from '../components/ShowcaseBase.vue'
 p {
   margin-top: 0.5em;
   font-size: 20px;
-  color: #f5f5f5;
-  background: #1C1A1A;
+  color: var(--main-white);
+  background: var(--main-gray);
   border: {
     style: solid;
-    color: #288F9E;
+    color: var(--blue-light);
     radius: 14px;
     width: 1px;
   }

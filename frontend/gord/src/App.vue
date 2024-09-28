@@ -1,4 +1,5 @@
 <script setup>
+import Button from './components/Button.vue' 
 import { ref } from 'vue';
 import { RouterView, RouterLink, useRoute } from 'vue-router'
 import { computed } from 'vue';
@@ -6,6 +7,7 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import LeftLayout from './components/LeftLayout.vue'
 import RightLayout from './components/RightLayout.vue'
+import ProjTutSummary from './components/ProjTutSummary.vue';
 
 
 const route = useRoute();
@@ -22,19 +24,21 @@ const pageTitle = computed(() => {
       return 'blog';
     case 'projects':
       return 'projects';
-    case 'tutorials':
-      return 'tutorials';
     case 'faq':
       return 'faq';
+    case 'details':
+      return 'details';
     default:
       return 'Page';
   }
 });
 
 const search = ref('reduce-search-input');
+const hideGoSearch = ref(false);
 
 const toggleSearch = () => {
   search.value = search.value ===  'reduce-search-input'? 'show-search-input': 'reduce-search-input';
+  hideGoSearch.value = !hideGoSearch.value;
 }
 </script>
 
@@ -42,21 +46,21 @@ const toggleSearch = () => {
   <Header @toggle-search="toggleSearch"/>
   <div class="container">
    <div class="left-layout">
-    <LeftLayout />
+    <ProjTutSummary v-if="route.name === 'details' || route.name === 'blo'"/>
+    <LeftLayout v-else/>
    </div>
-    <hr class="hr-one">
     <main>
       <h2>
         {{ pageTitle }}@gord:~$ 
         <form action="">
-          <input type="search" name="search" :id="search" placeholder="Tape here to search">
+          <input type="search" name="search" :id="search" placeholder="Write here to search">
+          <Button type="square-v2" v-if="hideGoSearch"><input type="submit" value="Go" class="go-search"></Button>
         </form>
       </h2>
       <Transition name="fade" mode="out-in">
         <RouterView />
       </Transition>
     </main>
-    <hr class="hr-two">
     <RightLayout>
       <div class="right-layout">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium<br><a href="#">&#10140;</a>
@@ -72,7 +76,7 @@ const toggleSearch = () => {
   
 <style lang="scss" scoped>
 h2 {
-  color: #00ff00;
+  color: var(--green-hack);
   display: flex;
   margin: {
     top: 2em;
@@ -86,8 +90,12 @@ h2 {
 }
 
 main {
-  min-width: 68vw;
-  max-width: 68vw;
+  min-width: 67vw;
+  max-width: 67vw;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: var(--main-gray);
 }
 
 .container {
@@ -95,41 +103,14 @@ main {
   min-height: 90vh;
 }
 
-
-.right-layout {
-  margin-top: 2em;
-  font-size: 15px;
-  padding: 1em;
-  font: {
-    family: "Roboto", system-ui;
-    weight: 300;
-    style: normal;
-  }
-
-  
-}
-
 section {
     padding: 1em;
-}
-
-hr {
-  width: 1px;
-  color: #1C1A1A;
-}
-
-.hr-one {
-  height: 40vh;
-}
-
-.hr-two {
-  height: 70vh;
 }
 
 #reduce-search-input {
     height: 30px;
     width: 10px;
-    background-color: #f5f5f5;
+    background-color: var(--main-white);
     pointer-events: none;
     animation: blink 1.2s step-end infinite;
 }
@@ -137,14 +118,14 @@ hr {
 #show-search-input {
     height: 50px;
     width: 330px;
-    color: #f5f5f5;
-    background: #0A0A0A/*#505050*#1C1A1A*/;
+    color: var(--main-white);
+    background: var(--main-black)/*#505050*#1C1A1A*/;
     pointer-events: all;
     animation: none;
     font-size: 20px;
     /*border-radius: 14px;*/
     border-bottom-style: solid;
-    border-color: #00ff00;
+    border-color: var(--green-hack);
     border-width: 1px;
 }
 
@@ -152,12 +133,22 @@ hr {
   border-style: none;
   outline: none;
   padding-left: 1em;
-  margin-left: 5px;
+  margin-left: 10px;
   transition: all 0.5s ease;
   font-family: "Roboto Mono", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.go-search {
+  background: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Roboto Mono", system-ui;
+  border-style: none;
+  color: var(--green-hack);
+  cursor: pointer;
 }
 
 @keyframes blink {

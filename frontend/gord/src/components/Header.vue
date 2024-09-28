@@ -9,16 +9,22 @@ const toggleSubscribePopup = () => {
     showSubscribePopup.value = !showSubscribePopup.value;
 }
 
-const emit = defineEmits([ 'toggle-search' ])
+const emit = defineEmits([ 'toggle-search' ]);
 
 const toggleSearch = () => {
     emit('toggle-search');
 }
 
-const mode = ref(false);
+const lightMode = ref(false);
 
 const toggleMode = () => {
-    mode.value = !mode.value;
+    lightMode.value = !lightMode.value;
+    if(lightMode.value) {
+        document.body.classList.add('light-mode');
+    }
+    else {
+        document.body.classList.remove('light-mode');
+    }
 }
 </script>
 
@@ -38,15 +44,15 @@ const toggleMode = () => {
                 <span class="subscribe">Subscribe</span>
             </Button>
             <Button type="banner-button" @click="toggleMode">
-                <img src="./icons/light_mode_blue.svg" alt="Theme" v-if="mode === false">
-                <img src="./icons/dark_mode_blue.svg" alt="Theme" v-else>
+                <img src="./icons/light_mode_blue.svg" alt="Theme" v-if="lightMode === false">
+                <img src="./icons/dark_mode.svg" alt="Theme" v-else>
             </Button>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    $banner-background-color: #1C1A1A;
+    $banner-background-color: var(--main-gray);
     $banner-width: 100vw;
     $banner-height: 80px;
 
@@ -63,9 +69,6 @@ const toggleMode = () => {
     #banner {
         height: $banner-height;
         background: $banner-background-color;
-        border-bottom-style: solid;
-        border-bottom-color: #00ff00;
-        border-width: 1px;
         @include displaying(between);
     }
 
@@ -91,7 +94,7 @@ const toggleMode = () => {
 
     .subscribe {
         display: block;
-        color: #288F9E;
+        color: var(--blue-light);
         font-family: "Roboto", system-ui;
         font-weight: bold;
         font-style: normal;

@@ -53,7 +53,7 @@ const toggleComments = () => {
     gap: 0.5em;
 
     span {
-        color: #00ff00;
+        color: var(--hover-gray);
         font: {
             weight: 700;
             size: 20px;
@@ -75,7 +75,7 @@ const toggleComments = () => {
 }
 
 .nbr-comments {
-    color: #288F9E;
+    color: var(--blue-light);
 }
 
 .nbr-comments {

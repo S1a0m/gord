@@ -33,17 +33,15 @@ const closeMpg = () => {
                 </span>
             </div>
         </div>
-        <div>
+        <div class="copyright">
             © 2024 Gord. Tous droits réservés.
         </div>
-        <Transition>
-            <MentionsPolitiques v-if="showMp" @close-mp="closeMpg"/>
-        </Transition>
+        <MentionsPolitiques v-if="showMp" @close-mp="closeMpg" class="fade-mp"/>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    $footer-background-color: #1C1A1A;
+    $footer-background-color: var(--main-gray);
     $footer-width: 100vw;
     $footer-height: 200px;
 
@@ -63,11 +61,6 @@ const closeMpg = () => {
             top: 3em;
             bottom: 1em;
         }
-        border: {
-            top-style: solid;
-            top-color: #00ff00;
-            width: 1px;
-        }
         @include displaying(between, column);
 
         .main-content {
@@ -80,21 +73,14 @@ const closeMpg = () => {
                 font-family: "Roboto", system-ui;
                 font-weight: 300;
                 font-style: normal;
+                color: #f5f5f5;
             }
         }
     }
 
     .contact {
-        /*background: #0A0A0A;
-        padding: 1em;
-        border: {
-            style: solid;
-            color: #288F9E;
-            radius: 14px;
-            width: 1px;
-        }*/
         .name {
-            color: #288F9E;
+            color: var(--blue-light);
             font-family: "Roboto", system-ui;
             font-weight: 400;
             font-style: normal;
@@ -109,7 +95,7 @@ const closeMpg = () => {
     }
 
     .m-p {
-        color: #AC1D1D;
+        color: var(--main-red);
         font-size: 16px;
         font-family: "Roboto", system-ui;
         font-weight: 300;
@@ -127,32 +113,17 @@ const closeMpg = () => {
     }
 
     .w-e {
-        color: #00ff00;
+        color: var(--hover-gray);
         font-family: "Roboto", system-ui;
         font-weight: 500;
         font-style: normal;
         font-size: 16px;
 
         &+span {
-            color: #288F9E;
+            color: var(--blue-light);
             font-family: "Roboto", system-ui;
             font-weight: 300;
             font-style: italic;
         }
     }
-
-.v-enter-active,
-.v-leave-active {
-  transition: 500ms ease-out;
-}
-
-.v-enter-from {
-  opacity: 0;
-  transform: scale(1.1)/*translateX(80em)*/;
-}
-
-.v-leave-to {
-  opacity: 0;
-  transform: scale(1.1)/*translateX(80em)*/;
-}
 </style>

@@ -21,7 +21,7 @@ const props = defineProps([
         <br>
         <footer>
             <Button type="square-v2">
-                <img src="./icons/like.svg" alt="Search" class="like-icon">
+                <img src="./icons/like_blue.svg" alt="Search" class="like-icon">
             </Button>
             <span class="likes">{{ props.likes }}</span>
         </footer>
@@ -48,8 +48,8 @@ footer {
 }
 
 .content {
-    color: #f5f5f5;
-    background: #1C1A1A;
+    color: var(--main-white);
+    background: var(--main-gray);
     font-family: "Roboto", system-ui;
     font-size: 15px;
     font-weight: 400;
@@ -66,7 +66,7 @@ footer {
 }
 
 time, .likes {
-    color: #00ff00;
+    color: var(--hover-gray);
 }
 
 .name {
@@ -74,10 +74,10 @@ time, .likes {
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
+  color: var(--blue-dark);
 }
 
 .likes {
-    color: #00ff00;
     font-family: "Roboto Mono", system-ui;
     font-optical-sizing: auto;
     font-weight: 700;

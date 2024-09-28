@@ -30,7 +30,7 @@ const props = defineProps([
 
 <style lang="scss" scoped>
 time {
-    color: #00ff00;
+    color: var(--hover-gray);
 }
 
 .pubdate {
