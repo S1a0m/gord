@@ -110,6 +110,13 @@ const closeMpg = () => {
     img {
         height: 54px;
         width: 54px;
+        background: var(--blue-light);
+        border-radius: 14px;
+        transition: all 500ms ease-in-out;
+
+        &:hover {
+            background: var(--hover-gray);
+        }
     }
 
     .w-e {

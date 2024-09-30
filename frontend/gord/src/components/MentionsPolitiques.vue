@@ -9,7 +9,7 @@ const closeMpg = () => {
 </script>
 
 <template>
-    <div class="">
+    <div class="container">
         <pre>
 
 
@@ -100,17 +100,22 @@ const closeMpg = () => {
 </template>
 
 <style lang="scss"  scoped>
-pre {
+.container {
+    display: flex;
     position: fixed;
     z-index: 4;
     top: 6em;
-    left: 24em;
+    left: 16em;
     height: 80vh;
-    overflow: auto;
-    color: var(--green-hack);
     border-style: solid;
     border-width: 1px;
+    border-color: var(--green-hack);
     background-color: var(--mp-background);
+}
+
+pre {
+    overflow: auto;
+    color: var(--green-hack);
 }
 
 .options-mp {
@@ -118,11 +123,6 @@ pre {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    position: fixed;
-    z-index: 4;
-    top: 5.1em;
-    left: 18.5em;
-    width: 4em;
 
     span {
         margin: 8px;

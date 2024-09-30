@@ -22,22 +22,22 @@ const toggleSummaryStat = () => {
         <Transition>
             <div class="content" v-if="summaryStat">
                 <ul>
-                    <li class="article">Introduction</li>
+                    <li class="article">Introduction</li><!--/*HERE/*/-->
                     <li>
                         Section 1
                         <ul>
-                            <li class="article">Partie 1</li>
-                            <li class="article">Partie 2</li>
+                            <li class="article">Partie 1</li><!--/*HERE/*/-->
+                            <li class="article">Partie 2</li><!--/*HERE/*/-->
                         </ul>
                     </li>
                     <li>
                         Section 2
                         <ul>
-                            <li class="article">Partie 1</li>
-                            <li class="article">Partie 2</li>
+                            <li class="article">Partie 1</li><!--/*HERE/*/-->
+                            <li class="article">Partie 2</li><!--/*HERE/*/-->
                         </ul>
                     </li>
-                    <li class="article">Conclusion</li>
+                    <li class="article">Conclusion</li><!--/*HERE/*/-->
                 </ul>
             </div>
         </Transition>

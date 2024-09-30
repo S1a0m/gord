@@ -1,7 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import Button from './Button.vue';
-import BlogArticle from '../components/BlogArticle.vue'
 
 const props = defineProps([
     'name',
@@ -30,11 +29,11 @@ const goOnReviews = `${props.details}/#reviews`;
             <div class="content">
                 <span class="title">{{ props.name }}</span>
                 <div class="sommary">{{ props.sommary }}</div>
-                <span class="li"><RouterLink :to="props.details"><span class="nk">Voir plus ...</span></RouterLink></span>
+                <span class="li"><RouterLink :to="props.details"><span class="nk">Lire la doc ...</span></RouterLink></span>
             </div>
             <footer>
                 <RouterLink :to="goOnReviews">
-                    <Button type="inside-button"  @click="toggleComments">
+                    <Button type="inside-button">
                         <span class="nbr-comments">{{ props.comments }} commentaire(s)</span>
                     </Button>
                 </RouterLink>
