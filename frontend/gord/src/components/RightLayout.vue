@@ -9,8 +9,8 @@
 
 <style lang="scss" scoped>
 aside {
-    width: 60vw;
-    margin-top: 2em;
+    width: 16vw;
+    // margin-top: 2em;
     font-size: 15px;
     padding: 1em;
     font: {

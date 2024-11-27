@@ -7,24 +7,64 @@ import ArticleBase from '../components/ArticleBase.vue'
       <div class="content">
         <div class="section">
           <ArticleBase active-page="about" section-color="section" section="Présentation Personnelle">
-            <img src="../components/icons/hacker-gord2.gif" alt="" class="avatar">
+            <img src="../components/icons/hacker.jpg" alt="" class="avatar">
             <br><br>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum  
-              Ou allez directement sur cette page pour consulter les
+            Béninois, poète en mes heures perdues, passionné de technologie depuis ma tendre enfance, j'ai découvert l'essence même de l'informatique après avoir repris
+            ma première année de mathématique. Depuis, je m'y suis accroché. Je suis tout le temps dans une nouvelle quête de 
+            connaissance en informatique et je ne m'en lasse jamais. On peut dire que j'en suis devenu vraiment accro. Mes Compétences
+            en mathématique font de mes projets des outils impécables dont je suis extrêmement fière. <br><br>
+            Mes passes temps favoris restent prioritairement les projets informatiques sur lesquels je travaille, les jeux vidéos et aussi les mangas. <br>
+            Ah! J'oubliais. J'adore aussi les maths 🥰.
           </ArticleBase>
         </div>
         <div class="section">
           <ArticleBase active-page="about" section-color="section" section="Parcours Académiques et Professionnel">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur
+            J'ai obtenu tous mes diplômes au Bénin. <br> <br>
+              <ul>
+                <li>2013 - 2014: <b>Obtention du Certificat d'Etude Primaire(CEP)</b> au CSCP "Saint Pierre et St Paul" de Porto-Novo</li>
+                <li>2017 - 2018: <b>Obtention du Brevet d'Etude du Premier Cycle(BEPC)</b> au CS "La Pyramide des arts" de Porto-Novo</li>
+                <li>2020 - 2021: <b>Obtention du BACCALAUREAT(BAC) série C</b> au CEG "DAVIE" de Porto-Novo</li>
+                <li>2024 - 2025: <b>Étudiant en 3ème année(L3) de Mathématique, Informatique et Applications</b> à la FAST de l'UAC</li>
+              </ul><br>
+              Je travaille actuellement en tant que developpeur freelance sur des plateformes bien connues comme <RouterLink><b>ComeUp</b></RouterLink> et <RouterLink><b>UpWork</b></RouterLink>.
           </ArticleBase>
         </div>
         <div class="section">
           <ArticleBase active-page="about" section-color="section" section="Compétences">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi temporaincidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam
+              <ul>
+                  <li><b>Programmation</b>
+                    <ul>
+                      <li>Python</li>
+                      <li>JavaScript</li>
+                      <li>C</li>
+                      <li>C++</li>
+                      <li>Rust</li>
+                      <li>HTML, CSS & SASS</li>
+                      <li>SQL</li>
+                    </ul>
+                  </li><br>
+                  <li><b>Frameworks</b>
+                    <ul>
+                      <li>Django(REST FRAMEWORK)</li>
+                      <li>Vue-ionic</li>
+                      <li>Vue.js</li>
+                      <li>Qt</li>
+                      <li>Slint</li>
+                    </ul>
+                  </li><br>
+                  <li><b>Autres</b>
+                    <ul>
+                      <li>Maintenance des ordinateurs</li>
+                      <li>Mathématique</li>
+                      <li>Hacking(CTF Player)</li>
+                      <li>Électronique(Systèmes embarqués - Arduino)</li>
+                    </ul>
+                  </li><br>
+              </ul>
           </ArticleBase>
         </div>
         <div class="go-projects">
-          Allez directement sur cette page pour consulter les <RouterLink to="/projects">projets</RouterLink>
+          <RouterLink to="/projects"> Consulter mes projets.</RouterLink>
         </div>
       </div>
 </template>
@@ -36,16 +76,21 @@ import ArticleBase from '../components/ArticleBase.vue'
   .avatar {
     border-radius: 14px;
     width: 411px;
-    height: 331px;
+    height: 450px;
   }
 }
 
 .go-projects {
-  margin-top: 4em;
+  margin-top: 2em;
+  margin-left: 1em;
   font: {
     family: "Roboto Mono", monospace;
     optical-sizing: auto;
     style: normal;
   }
+}
+
+ul {
+  margin-left: 1em;
 }
 </style>

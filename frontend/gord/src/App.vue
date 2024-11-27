@@ -1,13 +1,13 @@
 <script setup>
-import Button from './components/Button.vue' 
 import { ref } from 'vue';
-import { RouterView, RouterLink, useRoute } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue';
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import LeftLayout from './components/LeftLayout.vue'
 import RightLayout from './components/RightLayout.vue'
 import ProjTutSummary from './components/ProjTutSummary.vue';
+import MenuG from './components/MenuG.vue';
 
 
 const route = useRoute();
@@ -46,30 +46,30 @@ const toggleSearch = () => {
   <Header @toggle-search="toggleSearch"/>
   <div class="container">
    <div class="left-layout">
-    <ProjTutSummary v-if="route.name === 'details' || route.name === 'blo'"/>
+    <ProjTutSummary v-if="route.name === 'project-details' || route.name === 'blog-details'"/>
     <LeftLayout v-else/>
    </div>
     <main>
       <h2>
-        {{ pageTitle }}@gord:~$ 
+        <span class="page-title">{{ pageTitle }}@pxdev:~$</span> 
         <form action="">
           <input type="search" name="search" :id="search" placeholder="Write here to search">
-          <Button type="square-v2" v-if="hideGoSearch"><input type="submit" value="Go" class="go-search"></Button>
+          <!--<Button type="square-v2" v-if="hideGoSearch"><input type="submit" value="Go" class="go-search"></Button>-->
         </form>
       </h2>
       <Transition name="fade" mode="out-in">
         <RouterView />
       </Transition>
     </main>
-    <RightLayout>
-      <div class="right-layout">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium<br><a href="#">&#10140;</a>
-        <br><br>
-        Lorem ipsum dolor sit amet<br><a href="#">&#10140;</a>
-        <br><br>
-        Voir plus de détails en consultant mon <RouterLink to="/blog">blog</RouterLink>
-      </div>
-    </RightLayout>
+    <div class="right-layout">
+      <RightLayout>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium<br><a href="#">&#10140;</a>
+          <br><br>
+          Lorem ipsum dolor sit amet<br><a href="#">&#10140;</a>
+          <br><br>
+          <!--Voir plus de détails en consultant mon <RouterLink to="/blog">blog</RouterLink>-->
+      </RightLayout>
+    </div>
   </div>
   <Footer />
 </template>
@@ -79,7 +79,8 @@ h2 {
   color: var(--green-hack);
   display: flex;
   margin: {
-    top: 2em;
+    //top: 5em;
+    top: 1em;
     bottom: 1em;
   }
   font: {
@@ -90,8 +91,7 @@ h2 {
 }
 
 main {
-  min-width: 67vw;
-  max-width: 67vw;
+  width: 66vw;
   border-left-style: solid;
   border-right-style: solid;
   border-width: 1px;
@@ -101,6 +101,7 @@ main {
 .container {
   display: flex;
   min-height: 90vh;
+  width: 100%;
 }
 
 section {
@@ -119,11 +120,10 @@ section {
     height: 50px;
     width: 330px;
     color: var(--main-white);
-    background: var(--main-black)/*#505050*#1C1A1A*/;
+    background: var(--main-black);
     pointer-events: all;
     animation: none;
     font-size: 20px;
-    /*border-radius: 14px;*/
     border-bottom-style: solid;
     border-color: var(--green-hack);
     border-width: 1px;
@@ -168,12 +168,15 @@ section {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  /*transform: scale(1.1)/*translateX(80em)*/;
 }
-/*
-.fade-leave-to {
-  opacity: 0;
-  transform: scale(1.1)/*translateX(80em)*;
-}*/
+
+@media screen and (max-width: 1280px) {
+  .left-layout, .right-layout {
+    display: none;
+  }
+  main {
+    width: 100%;
+  }
+}
 </style>
   

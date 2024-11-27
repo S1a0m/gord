@@ -49,7 +49,7 @@ $banner-buttons-backg: var(--main-black);
 }
 
 .menu-button {
-    @include buttonSize($square-v1-size, 250px, $banner-buttons-backg);
+    @include buttonSize($square-v1-size, 190px, $banner-buttons-backg);
 }
 
 .inside-button {

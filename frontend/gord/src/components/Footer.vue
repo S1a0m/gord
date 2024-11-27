@@ -15,22 +15,27 @@ const closeMpg = () => {
 
 <template>
     <div id="footer">
-        <div class="main-content">
-            <div class="contact">
-                <p class="name">
-                    AMOUSSOU Précieux Samson <br>Expert informatique
-                </p>
-                <p class="details">
-                    <span class="w-e">Whatsapp:</span><span>+ 229 60 40 60 83</span>
-                    <span class="w-e">Email:</span><span>gord@gmail.com</span>
-                </p>
-            </div>
-            <div class="git-mentions">
-                <a href="https://github.com/S1a0m"><img src="./icons/signe-github.png" alt=""></a>
-                <br><br>
-                <span class="m-p" @click="showMpg">
-                    Mentions légales et <br>Politiques de confidentialité
-                </span>
+        <div class="content">
+            <div class="main-content">
+                <div class="contact">
+                    <p class="name">
+                        AMOUSSOU Précieux Samson <br>Expert informatique
+                    </p>
+                    <p class="details">
+                        <span class="w-e">Whatsapp:</span><span>+229 54 14 12 87</span>
+                        <span class="w-e">Email:</span><span>precieuxdev1@gmail.com</span>
+                    </p>
+                </div>
+                <div class="git-mentions">
+                    <div class="coords">
+                        <a href="https://github.com/S1a0m"><img src="./icons/signe-github.png" alt=""></a>
+                        <a href="https://www.linkedin.com/in/amoussou-pr%C3%A9cieux-samson-040303244/"><img src="./icons/linkdin.png" alt=""></a>
+                    </div>
+                    <br>
+                    <span class="m-p" @click="showMpg">
+                        Mentions légales et <br>Politiques de confidentialité
+                    </span>
+                </div>
             </div>
         </div>
         <div class="copyright">
@@ -43,12 +48,11 @@ const closeMpg = () => {
 <style lang="scss" scoped>
     $footer-background-color: var(--main-gray);
     $footer-width: 100vw;
-    $footer-height: 200px;
+    $footer-height: 20vh/*200px*/;
 
-    @mixin displaying($space, $direction: row) {
+    @mixin displaying($direction: row) {
         display: flex;
-        justify-content: space-$space;
-        align-items: center;
+        justify-content: space-between;
         flex-direction: $direction;
     }
 
@@ -57,39 +61,61 @@ const closeMpg = () => {
         margin-top: 4em;
         background: $footer-background-color;
         height: $footer-height;
+        // align-items: center;
+        //width: $footer-width;
         padding: {
             top: 3em;
             bottom: 1em;
         }
-        @include displaying(between, column);
+        @include displaying(column);
 
-        .main-content {
-            @include displaying(between);
-            gap: 691px;
-
-            &+div {
-                margin-top: 3em;
-                font-size: 16px;
-                font-family: "Roboto", system-ui;
-                font-weight: 300;
-                font-style: normal;
-                color: #f5f5f5;
-            }
+        .content {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            align-items: center;
         }
+    }
+
+    .main-content {
+                /// @include displaying(row);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 2em;
+                width: 100vw;
+                flex-wrap: wrap;
+                
+
+                &+div {
+                    margin-top: 3em;
+                    font-size: 16px;
+                    font-family: "Roboto Mono", system-ui;
+                    font-weight: 300;
+                    font-style: normal;
+                    color: #f5f5f5;
+                }
+            }
+
+    .copyright {
+        text-align: center;
+        font-family: "Roboto Mono", system-ui;
     }
 
     .contact {
         .name {
             color: var(--blue-light);
-            font-family: "Roboto", system-ui;
+            font-family: "Roboto Mono", system-ui;
             font-weight: 400;
             font-style: normal;
         }
 
         .details {
+            max-width: 20em;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4px;
+            //gap: 1px;
             margin-top: 1em;
         }
     }
@@ -97,7 +123,7 @@ const closeMpg = () => {
     .m-p {
         color: var(--main-red);
         font-size: 16px;
-        font-family: "Roboto", system-ui;
+        font-family: "Roboto Mono", system-ui;
         font-weight: 300;
         font-style: normal;
         cursor: pointer;
@@ -119,16 +145,21 @@ const closeMpg = () => {
         }
     }
 
+    .coords {
+        display: flex;
+        gap: 1em;
+    }
+
     .w-e {
         color: var(--hover-gray);
-        font-family: "Roboto", system-ui;
+        font-family: "Roboto Mono", system-ui;
         font-weight: 500;
         font-style: normal;
         font-size: 16px;
 
         &+span {
             color: var(--blue-light);
-            font-family: "Roboto", system-ui;
+            font-family: "Roboto Mono", system-ui;
             font-weight: 300;
             font-style: italic;
         }

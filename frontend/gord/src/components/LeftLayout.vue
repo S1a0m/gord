@@ -1,6 +1,7 @@
 <script setup>
 import { ref} from 'vue';
 import MenuG from './MenuG.vue';
+import Button from './Button.vue';
 
 const showMenu = ref(false);
 
@@ -11,14 +12,14 @@ const toggleMenu = () => {
 
 <template>
     <aside>
-        <div class="menu">
+        <!--<div class="menu">
             <button class="menu-button" @click="toggleMenu">
                 <div class="menu-icon"></div>
                 <div class="menu-icon"></div>
                 <div class="menu-icon"></div>
                 <span>Menu</span>
             </button>
-        </div>
+        </div>-->
         <slot></slot>
     </aside>
     <Transition>
@@ -28,17 +29,15 @@ const toggleMenu = () => {
 
 <style lang="scss" scoped>
 aside {
-    width: 16vw;
-    margin: 1em;
+    width: 18vw;
+    //margin: 1em;
 }
 
 .menu {
-  margin-left: 14em;
-  margin-top: 1.4em;
-  margin-bottom: 1.4em;
+  margin-left: 103%;//74%;//14em;
+  margin-top: 0.5em;
   width: 5em;
-  position: sticky;
-  top: 1em;
+  position: relative;
 }
 
 .menu-button {

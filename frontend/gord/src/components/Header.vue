@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import Button from './Button.vue'  
 import SubscribePopup from './SubscribePopup.vue';
+import MenuG from './MenuG.vue';
 
 const showSubscribePopup = ref(false);
 
@@ -26,6 +27,12 @@ const toggleMode = () => {
         document.body.classList.remove('light-mode');
     }
 }
+
+const showMenu = ref(false);
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+}
 </script>
 
 <template>
@@ -34,7 +41,7 @@ const toggleMode = () => {
     </Transition>
     <div id="banner">
         <div id="logo">
-            Gord
+            PxDev
         </div>
         <div>
             <Button type="banner-button" @click="toggleSearch">
@@ -49,27 +56,43 @@ const toggleMode = () => {
             </Button>
         </div>
     </div>
+    <div class="menu">
+        <div class="menu-deta">
+            <MenuG />
+        </div>
+        <div class="menu-detb">
+            <Transition>
+            <MenuG v-if="showMenu" @close-menu="toggleMenu"/>
+            </Transition>
+        </div>
+        <div class="menu-ic" @click="toggleMenu">
+            <Button type="square-v1">
+                <img src="./icons/menu.svg" alt="Menu">
+            </Button>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
     $banner-background-color: var(--main-gray);
     $banner-width: 100vw;
-    $banner-height: 80px;
+    $banner-height: 9vh/*80px*/;
 
     $logo-color: #FFD700;
     $logo-size: 40px;
 
-    @mixin displaying($space) {
+    @mixin displaying() {
         display: flex;
-        justify-content: space-$space;
         align-items: center;
     }
 
 
     #banner {
         height: $banner-height;
+        max-width: 100vw;
         background: $banner-background-color;
-        @include displaying(between);
+        justify-content: space-between;
+        @include displaying;
     }
 
     #logo {
@@ -81,9 +104,9 @@ const toggleMode = () => {
         font-style: normal;
         
         &+div {
-            @include displaying(around);
-            margin-left: 78%; 
+            @include displaying;
             gap: 1em;
+            margin-right: 20px;
         }
     }
 
@@ -93,12 +116,18 @@ const toggleMode = () => {
     }
 
     .subscribe {
-        display: block;
         color: var(--blue-light);
         font-family: "Roboto", system-ui;
         font-weight: bold;
         font-style: normal;
         font-size: 20px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1em;
     }
 
 .v-enter-active,
@@ -113,6 +142,28 @@ const toggleMode = () => {
 
 .v-leave-to {
   opacity: 0;
-  transform: translateY(-20em);
+  transform: translateY(-50em);
+}
+
+.menu-ic {
+    display: none;
+  }
+
+@media screen and (max-width: 1280px) {
+  .menu-deta {
+    display: none;
+  }
+
+  .menu-ic {
+    display: block;
+    margin-left: 1em;
+  }
+
+  .menu {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 1em;
+    }
 }
 </style>

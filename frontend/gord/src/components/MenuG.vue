@@ -25,10 +25,52 @@ const closeMenu = () => {
 
 <style lang="scss" scoped>
 .container {
-  position: absolute;
-  left: 20em;
-  top: 8em;
+  opacity: 0.3;
+  width: fit-content;
   z-index: 3;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-gray);
+  width: fit-content;
+  height: 3em;
+  padding: 1em;
+  border-radius: 14px;
+  border-color: var(--blue-light);
+}
+
+span {
+  display: block;
+  color: var(--blue-light);
+  font-family: "Roboto Mono", system-ui;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 32px;
+}
+
+.active {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1280px) {
+.container {
+  opacity: 1;
+  width: fit-content;
+  position: absolute;
+  top: 11em;
 }
 
 nav {
@@ -42,18 +84,11 @@ nav {
   align-items: center;
   justify-content: center;
   background: var(--main-gray);
-  width: 25em;
-  min-height: 78vh;
+  width: 20em;
+  height: 40vh;
+  padding: 1em;
   border-radius: 14px;
   border-color: var(--blue-light);
 }
-
-span {
-  display: block;
-  color: var(--blue-light);
-  font-family: "Roboto Mono", system-ui;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 32px;
 }
 </style>

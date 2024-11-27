@@ -8,6 +8,7 @@
   --main-red: #AC1D1D;
   --hover-gray: #505050;
   --mp-background: rgba(0, 0, 0, .8);
+  --hover-article: #131313;
 }
 
 body.light-mode {
@@ -19,6 +20,7 @@ body.light-mode {
   --main-red: #FF6B6B;
   --hover-gray: #999999; 
   --mp-background: rgba(250, 250, 250, .8);
+  --hover-article: #c4c4c4;
 }
 
 * {

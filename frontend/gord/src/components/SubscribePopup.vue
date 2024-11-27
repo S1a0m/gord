@@ -49,10 +49,13 @@ import Button from './Button.vue'
     height: 11em;
     border-radius: 14px;
     border-color: var(--blue-light);
-    position: absolute;
+    position: fixed;
     background: var(--main-gray);
-    left: 40em;
-    top: 20px;
+    //left: 40em;
+    left: 50%;
+    top: 12%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
 }
 
 form {

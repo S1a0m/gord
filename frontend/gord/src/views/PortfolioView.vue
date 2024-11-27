@@ -25,7 +25,7 @@ import ArticleBase from '../components/ArticleBase.vue'
           </ArticleBase>
         </div>
         <div class="go-projects">
-          Consultez <RouterLink to="/projects">ici mes projets</RouterLink>
+          <RouterLink to="/projects">Consultez ici mes projets</RouterLink>
         </div>
       </div>
 </template>
@@ -70,6 +70,7 @@ import ArticleBase from '../components/ArticleBase.vue'
 
 .go-projects {
   margin-top: 4em;
+  margin-left: 1em;
   &, .certificates, .rewards, .testimony {
     font: {
       family: "Roboto Mono", monospace;

@@ -27,7 +27,7 @@ const goOnReviews = `${props.details}/#reviews`;
                 </div>
             </header>
             <div class="content">
-                <span class="title">{{ props.name }}</span>
+                <span class="title"><b>{{ props.name }}</b></span>
                 <div class="sommary">{{ props.sommary }}</div>
                 <span class="li"><RouterLink :to="props.details"><span class="nk">Lire la doc ...</span></RouterLink></span>
             </div>

@@ -41,7 +41,6 @@ import ArticleBase from '../components/ArticleBase.vue'
 
 p {
   margin-top: 0.5em;
-  padding-right: 10em;
   font-size: 16px;
   color: var(--main-white);
   font: {

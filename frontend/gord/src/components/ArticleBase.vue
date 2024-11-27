@@ -9,7 +9,7 @@ const props = defineProps([
 <template>
   <div class="container">
     <div>
-      <h4>{{ props.activePage }}@gord<span class="dollar">:</span><span :class="props.sectionColor">/{{ props.section }}~</span><span class="dollar">$</span></h4>
+      <h4>{{ props.activePage }}@pxdev<span class="dollar">:</span><span :class="props.sectionColor">/{{ props.section }}~</span><span class="dollar">$</span></h4>
         <section>
             <slot></slot>
         </section>
@@ -27,6 +27,7 @@ section {
   padding-right: 10em;
   font-size: 16px;
   color: var(--main-white);
+  text-wrap: wrap;
   font: {
     family: "Roboto Mono", monospace;
     optical-sizing: auto;

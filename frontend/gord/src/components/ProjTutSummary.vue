@@ -50,6 +50,7 @@ header {
     justify-content: space-between;
     align-items: center;
     font-family: "Roboto", system-ui;
+    padding: 1em;
 
     h3 {
         font-family: "Roboto Mono", system-ui;

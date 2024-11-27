@@ -6,17 +6,35 @@ import ShowcaseBase from '../components/ShowcaseBase.vue'
 <template>
       <div class="content">
         <div class="section">
-          <ArticleBase active-page="projects" section-color="section" section="Programmation">
+          <ArticleBase active-page="projects" section-color="section" section="Developpement">
             <div class="programmation">
-              <ShowcaseBase likes="57" time="16/09/24" name="Projet 1" sommary="Contenu sommaire du projet" comments="03" details="/projects/project1-details"/><!--/*HERE/*/-->
-              <ShowcaseBase likes="11" time="16/09/24" name="Projet 2" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/><!--/*HERE/*/-->
+              <ShowcaseBase likes="11" time="16/09/24" name="PxDev" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
+              <ShowcaseBase likes="11" time="16/09/24" name="GLYC" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
+              <ShowcaseBase likes="11" time="16/09/24" name="WikiAlgo" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
+              <ShowcaseBase likes="11" time="16/09/24" name="PX" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
             </div>
           </ArticleBase>
         </div>
         <div class="section">
-          <ArticleBase active-page="projects" section-color="section" section="Sécurité">
+          <ArticleBase active-page="projects" section-color="section" section="Hacking">
             <div class="security">
-              <ShowcaseBase likes="00" time="16/09/24" name="Projet 3" sommary="Contenu sommaire du projet" comments="00" details="/projects/project3-details"/><!--/*HERE/*/-->
+              <ShowcaseBase likes="57" time="16/09/24" name="coDS" sommary="Contenu sommaire du projet" comments="03" details="/projects/project1-details"/><!--/*HERE/*/-->
+              <ShowcaseBase likes="11" time="16/09/24" name="Racine" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/><!--/*HERE/*/-->
+              <ShowcaseBase likes="57" time="16/09/24" name="Wind" sommary="Contenu sommaire du projet" comments="03" details="/projects/project1-details"/>
+            </div>
+          </ArticleBase>
+        </div>
+        <div class="section">
+          <ArticleBase active-page="projects" section-color="section" section="Intelligence Artificielle">
+            <div class="ia">
+              <ShowcaseBase likes="11" time="16/09/24" name="Morgane" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
+            </div>
+          </ArticleBase>
+        </div>
+        <div class="section">
+          <ArticleBase active-page="projects" section-color="section" section="Mathématique">
+            <div class="ia">
+              <ShowcaseBase likes="11" time="16/09/24" name="Appal" sommary="Contenu sommaire du projet" comments="21" details="/projects/project2-details"/>
             </div>
           </ArticleBase>
         </div>
@@ -24,8 +42,9 @@ import ShowcaseBase from '../components/ShowcaseBase.vue'
 </template>
 
 <style lang="scss" scoped>
-.programmation {
+.programmation, .security {
   display: flex;
+  flex-wrap: wrap;
   gap: 4em;
 }
 
@@ -33,22 +52,9 @@ import ShowcaseBase from '../components/ShowcaseBase.vue'
   margin-bottom: 2em;
 }
 
-p {
-  margin-top: 0.5em;
-  font-size: 20px;
-  color: var(--main-white);
-  background: var(--main-gray);
-  border: {
-    style: solid;
-    color: var(--blue-light);
-    radius: 14px;
-    width: 1px;
-  }
-}
-
 .go-projects {
   margin-top: 4em;
-  &, p {
+  & {
     font: {
       family: "Roboto Mono", monospace;
       optical-sizing: auto;

@@ -13,9 +13,9 @@ const closeMpg = () => {
         <pre>
 
 
-            **Mentions légales**
+            §<h3>Mentions légales</h3>
 
-            Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie<br>            numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs du site[Nom du site] les présentes mentions légales.
+            Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie<br>            numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs du site <b>PxDev</b> les présentes mentions légales.
 
             #### **1. Éditeur du site**
             Le site [Nom du site] est édité par :
@@ -42,10 +42,7 @@ const closeMpg = () => {
             Pour plus de détails sur la collecte et l’utilisation des données personnelles, consultez notre [Politique de confidentialité].
 
 
-            ---
-
-
-            **Politique de confidentialité**
+            <h3>Politique de confidentialité</h3>
 
             La présente politique de confidentialité a pour but d'informer les utilisateurs du site [Nom du site] de la manière dont leurs données personnelles <br>            sont collectées et traitées conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD) et de la loi Informatique et Libertés.
 
@@ -95,6 +92,11 @@ const closeMpg = () => {
                     <img src="./icons/close_blue.svg" alt="">
                 </Button>
             </span>
+            <span class="button-mp">
+                <Button type="square-v2">
+                    <input type="checkbox" name="" id="">
+                </Button>
+            </span>
         </div>
     </div>
 </template>
@@ -103,10 +105,11 @@ const closeMpg = () => {
 .container {
     display: flex;
     position: fixed;
-    z-index: 4;
-    top: 6em;
-    left: 16em;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
     height: 80vh;
+    transform: translate(-50%, -50%);
     border-style: solid;
     border-width: 1px;
     border-color: var(--green-hack);
@@ -115,7 +118,7 @@ const closeMpg = () => {
 
 pre {
     overflow: auto;
-    color: var(--green-hack);
+    color: var(--main-white);
 }
 
 .options-mp {
@@ -129,8 +132,19 @@ pre {
     }
 }
 
+h3 {
+    color: var(--blue-dark);
+    margin-left: 6em;
+}
+
 img {
     width: 30px;
     height: 30px;
+}
+
+input {
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
 }
 </style>

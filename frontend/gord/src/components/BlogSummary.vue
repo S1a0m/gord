@@ -34,7 +34,7 @@ nav {
   align-items: center;
   justify-content: center;
   background: var(--main-gray);
-  width: 42em;
+  max-width: 42em;
   height: 20em;
   /*border-radius: 14px;
   border-color: #288F9E;*/

@@ -4,12 +4,16 @@ import ArticleBase from '../components/ArticleBase.vue'
 </script>
 
 <template>
-        <ArticleBase active-page="home" section-color="section" section="Hola I'm Gord">
-          <img src="../components/icons/hacker-gord2.gif" alt="" class="avatar">
+        <ArticleBase active-page="home" section-color="section" section="Hola, je suis Précieux Samson AMOUSSOU">
+          <img src="../components/icons/hacker.jpg" alt="" class="avatar">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum
-            Voir plus de détails en cliquant <span class="link"><RouterLink to="/about">ici</RouterLink></span>
-            Ou allez directement sur cette page pour consulter les <span class="link"><RouterLink to="/projects">projets</RouterLink></span>
+            Développeur Full-Stack et passionné de technologie, je propose mes services pour la conception et le développement de projets web, mobiles et logiciels sur mesure. Mon expertise couvre une large gamme de technologies, dont HTML, CSS, JavaScript, Vue.js, Django, Qt et Rust, ainsi que l'intégration de bases de données SQL. <br><br>
+
+Je réalise des sites web modernes et performants, des applications mobiles intuitives et des outils logiciels robustes adaptés aux besoins spécifiques de mes clients. Par ailleurs, ma passion pour la cybersécurité me permet d'offrir des solutions sûres et optimisées. <br><br>
+
+Que ce soit pour créer une interface utilisateur attractive, développer un système backend puissant ou sécuriser vos projets, je mets tout en œuvre pour répondre à vos attentes avec rigueur et créativité. Mon objectif est de transformer vos idées en solutions concrètes et efficaces. <br>
+            <span class="link"><RouterLink to="/about">Voir plus de détails en cliquant ici</RouterLink></span> <br><br>
+            Ou allez sur cette page pour <span class="link"><RouterLink to="/projects">consulter mes projets</RouterLink></span>
           </p>
         </ArticleBase>
 </template>
@@ -18,12 +22,11 @@ import ArticleBase from '../components/ArticleBase.vue'
 .avatar {
   border-radius: 14px;
   width: 411px;
-  height: 331px;
+  height: 450px;
 }
 
 p {
-  margin-top: 2em;
-  padding-right: 10em;
+  margin-top: 1.5em;
   font-size: 16px;
   color: var(--main-white);
   font: {
