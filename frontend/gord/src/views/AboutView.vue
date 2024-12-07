@@ -93,4 +93,11 @@ import ArticleBase from '../components/ArticleBase.vue'
 ul {
   margin-left: 1em;
 }
+
+@media screen and (max-width: 744px) {
+    .avatar {
+      width: 350px;
+      height: 410px;
+    }
+}
 </style>

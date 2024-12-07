@@ -7,7 +7,6 @@ import Footer from './components/Footer.vue'
 import LeftLayout from './components/LeftLayout.vue'
 import RightLayout from './components/RightLayout.vue'
 import ProjTutSummary from './components/ProjTutSummary.vue';
-import MenuG from './components/MenuG.vue';
 
 
 const route = useRoute();
@@ -53,7 +52,7 @@ const toggleSearch = () => {
       <h2>
         <span class="page-title">{{ pageTitle }}@pxdev:~$</span> 
         <form action="">
-          <input type="search" name="search" :id="search" placeholder="Write here to search">
+          <input type="search" name="search" :id="search" placeholder="Search">
           <!--<Button type="square-v2" v-if="hideGoSearch"><input type="submit" value="Go" class="go-search"></Button>-->
         </form>
       </h2>
@@ -96,6 +95,7 @@ main {
   border-right-style: solid;
   border-width: 1px;
   border-color: var(--main-gray);
+  overflow: auto;
 }
 
 .container {

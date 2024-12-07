@@ -37,7 +37,7 @@ const toggleMenu = () => {
 
 <template>
     <Transition>
-        <SubscribePopup v-if="showSubscribePopup"/>
+        <SubscribePopup v-if="showSubscribePopup" @close-subscribepopup="toggleSubscribePopup"/>
     </Transition>
     <div id="banner">
         <div id="logo">
@@ -62,7 +62,7 @@ const toggleMenu = () => {
         </div>
         <div class="menu-detb">
             <Transition>
-            <MenuG v-if="showMenu" @close-menu="toggleMenu"/>
+                <MenuG v-if="showMenu" @close-menu="toggleMenu"/>
             </Transition>
         </div>
         <div class="menu-ic" @click="toggleMenu">
@@ -92,6 +92,7 @@ const toggleMenu = () => {
         max-width: 100vw;
         background: $banner-background-color;
         justify-content: space-between;
+        overflow: auto;
         @include displaying;
     }
 

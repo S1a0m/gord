@@ -1,6 +1,5 @@
 <script setup>
 import ArticleBase from '../components/ArticleBase.vue'
-import Appreciations from './Appreciations.vue'
 import BlogSummary from './BlogSummary.vue';
 import {RouterLink} from 'vue-router'
 
@@ -8,7 +7,10 @@ const props = defineProps([
     'section',
     'time',
     'likes',
-    'comments'
+    'comments',
+    'views',
+    'titles',
+    'link'
 ])
 
 const goOnBlog = `/blog/${props.section}`;
@@ -19,15 +21,19 @@ const goOnBlog = `/blog/${props.section}`;
         <article>
             <header>
                 <span class="pubdate">Publié le <time datetime="">{{ props.time }}</time></span>
+                <div class="views">
+                    <img src="./icons/vue.svg" alt="">
+                    <span>Vue: {{ props.views }}</span>
+                </div>
             </header>
-            <BlogSummary />
-            <RouterLink :to="goOnBlog">
-            <div class="content">
-                    <slot></slot>
-            </div>
-        </RouterLink>
+            <BlogSummary :titles="props.titles"/>
+            <RouterLink :to="props.link">
+                <div class="content">
+                        <slot></slot>
+                </div>
+            </RouterLink>
             <footer>
-                <Appreciations :likes="props.likes" :comments="props.comments"/>
+                <!--<Appreciations :likes="props.likes" :comments="props.comments"/>-->
             </footer>
         </article>
     </ArticleBase>
@@ -64,7 +70,7 @@ time {
     //background: linear-gradient(to right, rgb(61, 63, 61), rgb(61, 63, 61));
 }
 article {
-    width: 60em;
+    width: 60vw;//60em;
     padding: 1em;
     border-radius: 14px;
 }
@@ -72,9 +78,30 @@ article:hover {
     background: var(--hover-article);
 }
 
+.views {
+    display: flex;
+    gap: 0.5em;
+    //justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 0.2em;
+}
+
 /*.content:hover {
     border-style: solid;
     border-radius: 14px;
     border-width: 1px;
 }*/
+
+@media screen and (max-width: 744px) {
+    article {
+        width: 80vw;
+    }
+}
 </style>

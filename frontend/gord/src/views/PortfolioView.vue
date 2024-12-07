@@ -40,6 +40,7 @@ import ArticleBase from '../components/ArticleBase.vue'
 .c-r {
   display: flex;
   gap: 6em;
+  flex-wrap: wrap;
 }
 
 .certificates, .rewards, .testimony {
@@ -77,6 +78,13 @@ import ArticleBase from '../components/ArticleBase.vue'
       optical-sizing: auto;
       style: normal;
     }
+  }
+}
+
+@media screen and (max-width: 696px) {
+  .testimony {
+    width: 302px;
+    height: 469px;
   }
 }
 </style>

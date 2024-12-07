@@ -22,7 +22,7 @@ const closeMpg = () => {
                         AMOUSSOU Précieux Samson <br>Expert informatique
                     </p>
                     <p class="details">
-                        <span class="w-e">Whatsapp:</span><span>+229 54 14 12 87</span>
+                        <span class="w-e">Whatsapp:</span><span>+229 01 54 14 12 87</span>
                         <span class="w-e">Email:</span><span>precieuxdev1@gmail.com</span>
                     </p>
                 </div>
@@ -33,13 +33,13 @@ const closeMpg = () => {
                     </div>
                     <br>
                     <span class="m-p" @click="showMpg">
-                        Mentions légales et <br>Politiques de confidentialité
+                        Mentions légales & <br>Politiques de confidentialité
                     </span>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            © 2024 Gord. Tous droits réservés.
+            © 2024 PxDev. Tous droits réservés.
         </div>
         <MentionsPolitiques v-if="showMp" @close-mp="closeMpg" class="fade-mp"/>
     </div>

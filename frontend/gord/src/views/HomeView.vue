@@ -35,4 +35,11 @@ p {
     style: normal;
   }
 }
+
+@media screen and (max-width: 744px) {
+    .avatar {
+      width: 350px;
+      height: 410px;
+    }
+}
 </style>

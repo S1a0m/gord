@@ -1,4 +1,9 @@
 <script setup>
+import {RouterLink} from 'vue-router'
+
+const props = defineProps([
+  'titles'
+])
 </script>
 
 <template>
@@ -6,10 +11,13 @@
     <div class="summary">
       <nav>
         <span class="title">Summary</span>
-        <RouterLink to="#"><span>&#9900; Lorem ipsum dolor sit amet, consectetur adipiscing</span></RouterLink>
+        <span v-for="title in props.titles" :key="title.id">
+          <RouterLink :to="title.summary_link"><span>&#9900; {{ title.summary }}</span></RouterLink>
+        </span>
+        <!--<RouterLink to="#"><span>&#9900; Lorem ipsum dolor sit amet, consectetur adipiscing</span></RouterLink>
         <RouterLink to="#"><span>&#9900; Sed ut perspiciatis unde omnis iste natus error sit voluptatem</span></RouterLink>
         <RouterLink to="#"><span>&#9900; Nemo enim ipsam voluptatem quia voluptas sit</span></RouterLink>
-        <RouterLink to="#"><span>&#9900; Nemo enim ipsam voluptatem quia voluptas</span></RouterLink>
+        <RouterLink to="#"><span>&#9900; Nemo enim ipsam voluptatem quia voluptas</span></RouterLink>-->
       </nav>
     </div>
   </div>
@@ -36,6 +44,7 @@ nav {
   background: var(--main-gray);
   max-width: 42em;
   height: 20em;
+  overflow: auto;
   /*border-radius: 14px;
   border-color: #288F9E;*/
 }

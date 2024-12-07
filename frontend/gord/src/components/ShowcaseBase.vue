@@ -1,42 +1,47 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import Button from './Button.vue';
+import apiClient from '../axios';
 
 const props = defineProps([
     'name',
     'time',
-    'likes',
     'comments',
     'sommary',
-    'details'
+    'details',
+    'views',
+    'id'
 ])
 
 const goOnReviews = `${props.details}/#reviews`;
+
+const addNumViews = async () => {
+  try {
+    const response = await apiClient.post(`/projects/projects/${ props.id }/increment_view_post/`); // Requête POST
+  } catch (err) {
+    console.error("Erreur lors de l'action :", err);
+    alert("Une erreur est survenue.");
+  }
+};
 </script>
 
 <template>
     <article>
         <div class="container">
             <header>
-                <Button type="square-v2">
-                    <img src="./icons/like_blue.svg" alt="Search" class="like-icon">
-                </Button>
                 <div class="l-p">
-                    <span class="likes">{{ props.likes }}</span>
                     <span class="pubdate">Publié le <time datetime="">{{ props.time }}</time></span>
                 </div>
             </header>
             <div class="content">
                 <span class="title"><b>{{ props.name }}</b></span>
                 <div class="sommary">{{ props.sommary }}</div>
-                <span class="li"><RouterLink :to="props.details"><span class="nk">Lire la doc ...</span></RouterLink></span>
+                <span class="li"><RouterLink :to="props.details" @click="addNumViews"><span class="nk">Lire la doc ...</span></RouterLink></span>
             </div>
             <footer>
-                <RouterLink :to="goOnReviews">
-                    <Button type="inside-button">
-                        <span class="nbr-comments">{{ props.comments }} commentaire(s)</span>
-                    </Button>
-                </RouterLink>
+                <div class="views">
+                    <img src="./icons/vue.svg" alt="">
+                    <span>Vue: {{ props.views }}</span>
+                </div>
             </footer>
         </div>
     </article>
@@ -124,6 +129,13 @@ time, .likes {
     font-weight: 300;
     font-style: normal;
     font-size: 16px;
+}
+
+.views {
+    display: flex;
+    gap: 0.5em;
+    //justify-content: center;
+    align-items: center;
 }
 </style>
   
