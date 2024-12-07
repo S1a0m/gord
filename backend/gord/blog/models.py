@@ -4,11 +4,18 @@ from django.db import models
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
     published_date = models.DateField()
-    summary = models.TextField()
     outline = models.TextField(blank=True, null=True)
     link = models.URLField()
-    likes_count = models.PositiveIntegerField(default=0)
-    comments_count = models.PositiveIntegerField(default=0)
+    number_read = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
+
+
+class Summary(models.Model):
+    blog = models.OneToOneField(BlogPost, on_delete=models.CASCADE, related_name='summary')
+    summary = models.TextField()
+    summary_link = models.CharField(max_length=300)
+
+    def __str__(self):
+        return f"Sommaire de {self.blog.title}"

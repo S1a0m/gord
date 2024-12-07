@@ -5,4 +5,8 @@ from .models import Subscriber
 class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ['id', 'email', 'subscribed_at']
+        fields = ['email']
+
+
+class UnsubscribeSerializer(serializers.Serializer):
+    token = serializers.UUIDField()

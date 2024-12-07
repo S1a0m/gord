@@ -4,6 +4,7 @@ from .models import Project
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('name', 'release_date', 'likes_count')
+    list_display = ('name', 'category', 'release_date')
     search_fields = ('name',)
     list_filter = ('release_date',)
+
