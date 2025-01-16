@@ -13,7 +13,7 @@ class BlogPost(models.Model):
 
 
 class Summary(models.Model):
-    blog = models.OneToOneField(BlogPost, on_delete=models.CASCADE, related_name='summary')
+    blog = models.OneToOneField(BlogPost, on_delete=models.CASCADE, related_name='summary', default=0)
     summary = models.TextField()
     summary_link = models.CharField(max_length=300)
 

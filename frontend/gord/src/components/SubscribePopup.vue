@@ -55,6 +55,9 @@ const subscribeToNewsletter = async () => {
     font-weight: bold;
     font-style: normal;
     font-size: 20px;
+    @media screen and (max-width: 1280px) {
+        font-size: 1em;
+    }
 }
 
 #email {
@@ -63,7 +66,7 @@ const subscribeToNewsletter = async () => {
     font-size: 20px;
     height: 54px;
     width: 20vw;//389px;
-    border-radius: 14px;
+    // border-radius: 14px;
     background: var(--hover-gray);
     border-style: none;
     outline: none;
@@ -72,10 +75,20 @@ const subscribeToNewsletter = async () => {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    @media screen and (max-width: 1280px) {
+        width: 60vw;
+        font-size: 1em;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.9em;
+        height: 50px;
+    }
 }
 
 .subscribe-form {
-    border-style: solid;
+    /*border-style: solid;
     width: 34vw;//37em;
     //height: 11em;
     padding: 3em 0em 4em 2em;
@@ -87,7 +100,19 @@ const subscribeToNewsletter = async () => {
     left: 50%;
     top: 12%;
     z-index: 4;
+    transform: translate(-50%, -50%);*/
+    padding: 3em 0em 4em 2em;
+    display: flex;
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--green-hack);
+    background-color: var(--mp-background);
 }
 
 form {
@@ -104,15 +129,5 @@ form {
         gap: 1em;
         padding-right: 2em;
     }
-}
-
-@media screen and (max-width: 744px) {
-  .subscribe-form {
-    width: 70vw;
-  }
-
-  #email {
-    width: 60vw;
-  }
 }
 </style>

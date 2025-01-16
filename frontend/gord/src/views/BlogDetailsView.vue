@@ -1,5 +1,4 @@
 <script setup>
-import Appreciations from '../components/Appreciations.vue'
 import ArticleBase from '../components/ArticleBase.vue'
 </script>
 

@@ -23,6 +23,16 @@ Que ce soit pour créer une interface utilisateur attractive, développer un sys
   border-radius: 14px;
   width: 411px;
   height: 450px;
+
+  @media screen and (max-width: 744px) {
+    width: 350px;
+    height: 410px;
+  }
+
+  @media screen and (max-width: 370px) {
+    max-width: 310px;
+    height: 410px;
+  }
 }
 
 p {
@@ -34,12 +44,13 @@ p {
     optical-sizing: auto;
     style: normal;
   }
-}
 
-@media screen and (max-width: 744px) {
-    .avatar {
-      width: 350px;
-      height: 410px;
+  @media screen and (max-width: 1280px) {
+        font-size: 1em;
     }
+
+  @media screen and (max-width: 768px) {
+      font-size: 0.9em;
+  }
 }
 </style>

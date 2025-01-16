@@ -10,6 +10,7 @@ const closeMenu = () => {
 
 <template>
   <div class="container">
+    <span class="button-close" @click="closeMenu"><Button type="square-v1"><img src="./icons/close_blue.svg" alt=""></Button></span>
     <div class="menu">
       <nav>
         <RouterLink to="/" @click="closeMenu"><Button type="menu-button"><span>Home</span></Button></RouterLink>
@@ -48,8 +49,12 @@ nav {
   width: fit-content;
   height: 3em;
   padding: 1em;
-  border-radius: 14px;
-  border-color: var(--blue-light);
+  // border-radius: 14px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--green-hack);
+    background-color: var(--mp-background);
 }
 
 span {
@@ -59,10 +64,18 @@ span {
   font-weight: bold;
   font-style: normal;
   font-size: 32px;
+
+  @media screen and (max-width: 768px) {
+      font-size: 1.2em;
+  }
 }
 
 .active {
   pointer-events: none;
+}
+
+.button-close {
+  display: none;
 }
 
 @media screen and (max-width: 1280px) {
@@ -70,7 +83,7 @@ span {
   opacity: 1;
   width: fit-content;
   position: absolute;
-  top: 11em;
+  top: 5em;
 }
 
 nav {
@@ -85,10 +98,23 @@ nav {
   justify-content: center;
   background: var(--main-gray);
   width: 20em;
-  height: 40vh;
+  height: 70vh;
   padding: 1em;
-  border-radius: 14px;
-  border-color: var(--blue-light);
+  // border-radius: 14px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--green-hack);
+    background-color: var(--mp-background);
+
+  @media screen and (max-width: 768px) {
+    width: 15em;
+  }
+}
+
+.button-close {
+  display: block;
+  position: absolute;
+  transform: translate(0.5em, 0.5em);
 }
 }
 </style>

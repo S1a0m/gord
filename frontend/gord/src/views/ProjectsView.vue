@@ -1,5 +1,6 @@
 <script setup>
 import ArticleBase from '../components/ArticleBase.vue'
+import Loader from '@/components/Loader.vue';
 import ShowcaseBase from '../components/ShowcaseBase.vue'
 import apiClient from '../axios';
 import { ref, onMounted } from 'vue';
@@ -35,7 +36,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <p v-if="isLoading">Chargement des articles...</p>
+  <p v-if="isLoading"><!--Chargement des articles...-->
+    <Loader />
+  </p>
   <p v-else-if="error">{{ error }}</p>
   <div class="content" v-else>
     <div 

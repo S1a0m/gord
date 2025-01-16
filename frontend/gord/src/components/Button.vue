@@ -34,14 +34,26 @@ $banner-buttons-backg: var(--main-black);
 
 .square-v1 {
     @include buttonSize($square-v1-size, $square-v1-size, $button-backg, solid);
+
+    @media screen and (max-width: 1280px) {
+        @include buttonSize(50px, 50px, $button-backg, solid);
+    }
 }
 
 .banner-button {
     @include buttonSize($square-v1-size, $square-v1-size, $banner-buttons-backg);
+
+    @media screen and (max-width: 1280px) {
+        @include buttonSize(50px, 50px, $banner-buttons-backg);
+    }
 }
 
 .subscribe-button {
     @include buttonSize($square-v1-size, $subscribe-button-width, $banner-buttons-backg);
+
+    @media screen and (max-width: 1280px) {
+        @include buttonSize(50px, 110px, $banner-buttons-backg);
+    }
 }
 
 .comment-button {
@@ -50,6 +62,9 @@ $banner-buttons-backg: var(--main-black);
 
 .menu-button {
     @include buttonSize($square-v1-size, 190px, $banner-buttons-backg);
+    @media screen and (max-width: 1280px) {
+        @include buttonSize(50px, 150px, $banner-buttons-backg);
+    }
 }
 
 .inside-button {

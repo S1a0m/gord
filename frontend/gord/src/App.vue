@@ -1,45 +1,38 @@
 <script setup>
 import { ref } from 'vue';
-import { RouterView, useRoute } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router';
 import { computed } from 'vue';
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import LeftLayout from './components/LeftLayout.vue'
-import RightLayout from './components/RightLayout.vue'
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import LeftLayout from './components/LeftLayout.vue';
 import ProjTutSummary from './components/ProjTutSummary.vue';
-
 
 const route = useRoute();
 
-const pageTitle = computed(() => {
-  switch (route.name) {
-    case 'home':
-      return 'home';
-    case 'about':
-      return 'about';
-    case 'portfolio':
-      return 'portfolio';
-    case 'blog':
-      return 'blog';
-    case 'projects':
-      return 'projects';
-    case 'faq':
-      return 'faq';
-    case 'details':
-      return 'details';
-    default:
-      return 'Page';
-  }
-});
+// Un mapping des noms de routes à leurs titres
+const pageTitles = {
+  home: 'home',
+  about: 'about',
+  portfolio: 'portfolio',
+  blog: 'blog',
+  projects: 'projects',
+  faq: 'faq',
+  details: 'details',
+};
+
+// Utilisation de computed pour récupérer le titre dynamiquement
+const pageTitle = computed(() => pageTitles[route.name] || 'Page');
 
 const search = ref('reduce-search-input');
 const hideGoSearch = ref(false);
 
 const toggleSearch = () => {
-  search.value = search.value ===  'reduce-search-input'? 'show-search-input': 'reduce-search-input';
+  search.value =
+    search.value === 'reduce-search-input' ? 'show-search-input' : 'reduce-search-input';
   hideGoSearch.value = !hideGoSearch.value;
-}
+};
 </script>
+
 
 <template>
   <Header @toggle-search="toggleSearch"/>
@@ -60,15 +53,6 @@ const toggleSearch = () => {
         <RouterView />
       </Transition>
     </main>
-    <div class="right-layout">
-      <RightLayout>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium<br><a href="#">&#10140;</a>
-          <br><br>
-          Lorem ipsum dolor sit amet<br><a href="#">&#10140;</a>
-          <br><br>
-          <!--Voir plus de détails en consultant mon <RouterLink to="/blog">blog</RouterLink>-->
-      </RightLayout>
-    </div>
   </div>
   <Footer />
 </template>
@@ -87,12 +71,16 @@ h2 {
     optical-sizing: auto;
     style: normal;
   }
+
+  @media screen and (max-width: 768px) {
+      font-size: 1.1em;
+  }
 }
 
 main {
-  width: 66vw;
+  // width: 66vw;
   border-left-style: solid;
-  border-right-style: solid;
+  // border-right-style: solid;
   border-width: 1px;
   border-color: var(--main-gray);
   overflow: auto;
@@ -114,6 +102,9 @@ section {
     background-color: var(--main-white);
     pointer-events: none;
     animation: blink 1.2s step-end infinite;
+    @media screen and (max-width: 1280px) {
+      height: 28px;
+    }
 }
 
 #show-search-input {
@@ -171,7 +162,7 @@ section {
 }
 
 @media screen and (max-width: 1280px) {
-  .left-layout, .right-layout {
+  .left-layout {
     display: none;
   }
   main {

@@ -1,5 +1,6 @@
 <script setup>
 import BlogArticle from '../components/BlogArticle.vue' 
+import Loader from '@/components/Loader.vue';
 import apiClient from '../axios';
 import { ref, onMounted } from 'vue';
 
@@ -26,7 +27,9 @@ onMounted(() => {
 
 <template>
       <div class="content">
-        <p v-if="isLoading">Chargement des articles...</p>
+        <p v-if="isLoading"><!--Chargement des articles...-->
+          <Loader />
+        </p>
         <p v-else-if="error">{{ error }}</p>
         <div class="section" v-for="article in articles" :key="article.id">
           <BlogArticle :time="article.published_date" :section="article.title" :views="article.number_read" :titles="article.summary" :link="article.link">

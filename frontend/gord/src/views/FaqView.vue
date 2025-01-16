@@ -1,5 +1,6 @@
 <script setup>
 import ArticleBase from '../components/ArticleBase.vue'
+import Loader from '@/components/Loader.vue';
 import apiClient from '../axios';
 import { ref, onMounted } from 'vue';
 
@@ -25,7 +26,9 @@ onMounted(() => {
 </script>
 
 <template>
-      <p v-if="isLoading">Chargement de la faq...</p>
+      <p v-if="isLoading"><!--Chargement des articles...-->
+        <Loader />
+      </p>
       <p v-else-if="error">{{ error }}</p>
       <div class="section" v-for="i in faq" :key="i.id">
         <ArticleBase active-page="faq" section-color="section" :section="i.question">

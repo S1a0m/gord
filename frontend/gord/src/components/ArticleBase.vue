@@ -18,6 +18,7 @@ const props = defineProps([
 </template>
 
 <style lang="scss" scoped>
+
 .container {
   display: flex;
 }
@@ -33,6 +34,10 @@ section {
     optical-sizing: auto;
     style: normal;
   }
+
+  @media screen and (max-width: 768px) {
+      font-size: 0.9em;
+  }
 }
 
 h4 {
@@ -47,6 +52,9 @@ h4 {
     style: normal;
     size: 20px;
   }
+  @media screen and (max-width: 768px) {
+      font-size: 0.9em;
+  }
 }
 
 .dollar {
@@ -59,6 +67,10 @@ h4 {
     family: "Roboto", monospace;
     optical-sizing: auto;
     style: normal;
+  }
+
+  @media screen and (max-width: 768px) {
+      font-size: 0.9em;
   }
 }
 
