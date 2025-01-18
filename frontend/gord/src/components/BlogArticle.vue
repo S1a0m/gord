@@ -2,6 +2,7 @@
 import ArticleBase from '../components/ArticleBase.vue'
 import BlogSummary from './BlogSummary.vue';
 import {RouterLink} from 'vue-router'
+import apiClient from '../axios';
 
 const props = defineProps([
     'section',
@@ -13,6 +14,15 @@ const props = defineProps([
     'link',
     'id'
 ])
+
+const addNumViews = async () => {
+  try {
+    const response = await apiClient.post(`/blog/blog-posts/${ props.id }/increment_view_post/`); // Requête POST
+  } catch (err) {
+    console.error("Erreur lors de l'action :", err);
+    alert("Une erreur est survenue.");
+  }
+};
 </script>
 
 <template>
@@ -26,7 +36,7 @@ const props = defineProps([
                 </div>
             </header>
             <BlogSummary :titles="props.titles" :blog-link="props.link" :id="props.id"/>
-            <RouterLink :to="{ path: `blog/${props.link}`, query: { id: props.id } }">
+            <RouterLink :to="{ path: `blog/${props.link}`, query: { id: props.id } }" @click="addNumViews">
                 <div class="content">
                         <slot></slot>
                 </div>

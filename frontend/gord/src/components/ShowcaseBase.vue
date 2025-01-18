@@ -12,7 +12,6 @@ const props = defineProps([
     'id'
 ])
 
-const goOnReviews = `${props.details}/#reviews`;
 
 const addNumViews = async () => {
   try {

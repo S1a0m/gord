@@ -1,11 +1,21 @@
 <script setup>
 import {RouterLink} from 'vue-router'
+import apiClient from '../axios';
 
 const props = defineProps([
   'titles',
   'blogLink',
   'id'
 ])// `blog/${blogLink}/${title.summary_link}`
+
+const addNumViews = async () => {
+  try {
+    const response = await apiClient.post(`/blog/blog-posts/${ props.id }/increment_view_post/`); // Requête POST
+  } catch (err) {
+    console.error("Erreur lors de l'action :", err);
+    alert("Une erreur est survenue.");
+  }
+};
 </script>
 
 <template>
@@ -14,7 +24,7 @@ const props = defineProps([
       <nav>
         <span class="title">Summary</span>
         <span v-for="title in props.titles" :key="title.id">
-          <RouterLink :to="{ path: `blog/${props.blogLink}`, query: { id: props.id }, hash: `#${title.summary_link}` }"><span>&#9900; {{ title.summary }}</span></RouterLink>
+          <RouterLink :to="{ path: `blog/${props.blogLink}`, query: { id: props.id }, hash: `#${title.summary_link}` }" @click="addNumViews"><span>&#9900; {{ title.summary }}</span></RouterLink>
         </span>
       </nav>
     </div>
