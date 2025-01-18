@@ -53,5 +53,8 @@ p {
     optical-sizing: auto;
     style: normal;
   }
+  @media screen and (max-width: 1280px) {
+    font-size: 0.9em;
+  }
 }
 </style>

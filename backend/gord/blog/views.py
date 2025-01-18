@@ -1,7 +1,9 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.generics import ListAPIView
 from .models import BlogPost
+from django.db.models import Q
 from .serializers import BlogPostListSerializer, BlogPostDetailSerializer
 
 
@@ -57,3 +59,21 @@ class BlogPostViewSet(viewsets.ReadOnlyModelViewSet):
             {"message": f"Le nombre de vues est maintenant à {blog_post.number_read}"},
             status=status.HTTP_200_OK
         )
+
+
+class BlogPostSearchView(ListAPIView):
+    """
+    Recherche instantanée des blogs côté serveur.
+    """
+    serializer_class = BlogPostListSerializer
+
+    def get_queryset(self):
+        search_query = self.request.query_params.get('q', '').strip()
+        if search_query:
+            # Rechercher dans le titre, contenu des sections et sommaires
+            return BlogPost.objects.filter(
+                Q(title__icontains=search_query) |
+                Q(sections__section_content__icontains=search_query) |
+                Q(summaries__summary__icontains=search_query)
+            ).distinct()
+        return BlogPost.objects.none()  # Retourne une liste vide si aucune recher

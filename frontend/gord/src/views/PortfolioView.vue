@@ -53,13 +53,20 @@ const prevTestimonial = () => {
     <div class="section">
       <ArticleBase active-page="portfolio" section-color="section" section="Certifications et Récompenses">
         <div class="c-r">
+          <p>{{ testimonials[currentIndex] }}</p>
+          <div class="controls">
+            <button @click="prevTestimonial">◀</button>
+            <button @click="nextTestimonial">▶</button>
+          </div>
+        </div>
+        <!--<div class="c-r">
           <div class="certificates">
             <p>Certifications</p>
           </div>
           <div class="rewards">
             <p>Récompenses</p>
           </div>
-        </div>
+        </div>-->
       </ArticleBase>
     </div>
     <div class="section">
@@ -87,13 +94,7 @@ const prevTestimonial = () => {
   }
 }
 
-.c-r {
-  display: flex;
-  gap: 6em;
-  flex-wrap: wrap;
-}
-
-.certificates, .rewards, .testimony {
+.c-r, .testimony {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +110,7 @@ const prevTestimonial = () => {
   }
 }
 
-.testimony {
+.c-r, .testimony {
   width: 696px;
   height: 302px;
   position: relative;
@@ -117,8 +118,11 @@ const prevTestimonial = () => {
   p {
     margin: 0;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     padding: 0 1em;
+    @media screen and (max-width: 1280px) {
+        font-size: 0.8em;
+    }
   }
 
   .controls {
@@ -166,9 +170,24 @@ const prevTestimonial = () => {
 }
 
 @media screen and (max-width: 696px) {
-  .testimony {
+  .testimony, .c-r {
     width: 302px;
     height: 469px;
+
+    .controls {
+      button {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .testimony, .c-r {
+    width: 290px;
+    height: 467px;
 
     .controls {
       button {

@@ -6,6 +6,7 @@ import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import LeftLayout from './components/LeftLayout.vue';
 import BlogSummaries from './components/BlogSummaries.vue';
+import Loader from './components/Loader.vue';
 
 const route = useRoute();
 
@@ -38,6 +39,9 @@ const toggleSearch = () => {
   search.value = search.value === 'reduce-search-input' ? 'show-search-input' : 'reduce-search-input';
   hideGoSearch.value = !hideGoSearch.value;
 };
+
+//
+// 
 </script>
 
 
@@ -52,7 +56,7 @@ const toggleSearch = () => {
       <h2>
         <span class="page-title">{{ pageTitle }}@pxdev:~$</span> 
         <form action="">
-          <input type="search" name="search" :id="search" placeholder="Search">
+          <input type="search" name="search" :id="search" placeholder="Search a blog...">
         </form>
       </h2>
       <Transition name="fade" mode="out-in">

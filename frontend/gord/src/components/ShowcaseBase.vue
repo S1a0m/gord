@@ -64,6 +64,10 @@ article {
     &:hover {
         transform: scale(1.1);
     }
+    @media screen and (max-width: 1280px) {
+        height: 280px;
+        width: 280px;
+    }
 }
 
 .container {
@@ -93,6 +97,9 @@ footer {
 
 .nk, .sommary, .title {
     font-family: "Roboto Mono", system-ui;
+    @media screen and (max-width: 744px) {
+        font-size: 0.8em;
+    }
 }
 
 .l-p {

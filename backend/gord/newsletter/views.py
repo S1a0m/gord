@@ -34,16 +34,18 @@ class SubscriberViewSet(viewsets.ViewSet):
             return Response({"message": "Subscription successful"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    @action(detail=False, methods=['post'], url_path='unsubscribe')
+    @action(detail=False, methods=['get'], url_path='unsubscribe')
     def unsubscribe(self, request):
         """
-        Désabonne un utilisateur via un token.
+        Désabonne un utilisateur via un token envoyé par GET.
         """
-        serializer = UnsubscribeSerializer(data=request.data)
-        if serializer.is_valid():
-            token = serializer.validated_data['token']
-            subscriber = get_object_or_404(Subscriber, unsubscribe_token=token)
-            subscriber.is_active = False
-            subscriber.save()
-            return Response({"message": "You have been unsubscribed"}, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        token = request.query_params.get('token')
+        if not token:
+            return Response({"error": "Token is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        subscriber = get_object_or_404(Subscriber, unsubscribe_token=token)
+        subscriber.is_active = False
+        subscriber.save()
+
+        return Response({"message": "You have been unsubscribed"}, status=status.HTTP_200_OK)
+
