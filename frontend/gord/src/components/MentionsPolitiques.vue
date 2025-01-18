@@ -20,7 +20,7 @@ const closeMpg = () => {
 
             <h4>1. Éditeur du site</h4>
             <p>
-                Le site <a href="founder.amo-iv.tech">founder.amo-iv.tech</a> est édité par : Précieux Samson AMOUSSOU<br>
+                Le site <a href="https://pxdev.amo-iv.tech">pxdev.amo-iv.tech</a> est édité par : Précieux Samson AMOUSSOU<br>
                 <b>Adresse :</b> Tchinvié - Porto-Novo - Bénin<br>
                 <b>Responsable de la publication :</b> Précieux Samson AMOUSSOU<br>
                 <b>Email :</b> precieuxdev1@gmail.com<br>

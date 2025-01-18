@@ -10,10 +10,9 @@ const props = defineProps([
     'comments',
     'views',
     'titles',
-    'link'
+    'link',
+    'id'
 ])
-
-const goOnBlog = `/blog/${props.section}`;
 </script>
 
 <template>
@@ -26,15 +25,12 @@ const goOnBlog = `/blog/${props.section}`;
                     <span>Vue: {{ props.views }}</span>
                 </div>
             </header>
-            <BlogSummary :titles="props.titles"/>
-            <RouterLink :to="props.link">
+            <BlogSummary :titles="props.titles" :blog-link="props.link" :id="props.id"/>
+            <RouterLink :to="{ path: `blog/${props.link}`, query: { id: props.id } }">
                 <div class="content">
                         <slot></slot>
                 </div>
             </RouterLink>
-            <footer>
-                <!--<Appreciations :likes="props.likes" :comments="props.comments"/>-->
-            </footer>
         </article>
     </ArticleBase>
 </template>
@@ -66,11 +62,9 @@ time {
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
     background: var(--main-black);
-    //border-bottom-color: linear-gradient(to right, rgb(61, 63, 61), rgb(61, 63, 61));
-    //background: linear-gradient(to right, rgb(61, 63, 61), rgb(61, 63, 61));
 }
 article {
-    width: 60vw;//60em;
+    width: 50vw;//60em;
     padding: 1em;
     border-radius: 14px;
 }
@@ -81,7 +75,6 @@ article:hover {
 .views {
     display: flex;
     gap: 0.5em;
-    //justify-content: center;
     align-items: center;
 }
 
@@ -92,12 +85,6 @@ header {
     gap: 1em;
     padding: 0.2em;
 }
-
-/*.content:hover {
-    border-style: solid;
-    border-radius: 14px;
-    border-width: 1px;
-}*/
 
 @media screen and (max-width: 744px) {
     article {

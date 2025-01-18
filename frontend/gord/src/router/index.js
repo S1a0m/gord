@@ -14,7 +14,7 @@ const router = createRouter({
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      // which is lazy-loaded when them404 route is visited.
       component: () => import('../views/AboutView.vue')
     },
     {
@@ -28,8 +28,8 @@ const router = createRouter({
       component: () => import('../views/BlogView.vue')
     },
     {
-      path: '/blog/:details',
-      name: 'blog-details',
+      path: '/blog/:id',
+      name: 'blog-id',
       component: () => import('../views/BlogDetailsView.vue'),
       props: true
     },
@@ -42,12 +42,6 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
       component: () => import('../views/ProjectsView.vue')
-    },
-    {
-      path: '/projects/:details',
-      name: 'project-details',
-      component: () => import('../views/ProjectDetailsView.vue'),
-      props: true
     }
   ],
   scrollBehavior(to, from, savedPosition) {

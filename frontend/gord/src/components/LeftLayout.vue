@@ -12,14 +12,6 @@ const toggleMenu = () => {
 
 <template>
     <aside>
-        <!--<div class="menu">
-            <button class="menu-button" @click="toggleMenu">
-                <div class="menu-icon"></div>
-                <div class="menu-icon"></div>
-                <div class="menu-icon"></div>
-                <span>Menu</span>
-            </button>
-        </div>-->
         <slot></slot>
     </aside>
     <Transition>

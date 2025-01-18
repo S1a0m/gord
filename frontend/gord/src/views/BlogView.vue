@@ -32,9 +32,9 @@ onMounted(() => {
         </p>
         <p v-else-if="error">{{ error }}</p>
         <div class="section" v-for="article in articles" :key="article.id">
-          <BlogArticle :time="article.published_date" :section="article.title" :views="article.number_read" :titles="article.summary" :link="article.link">
-            <p>
-              {{ article.outline }}
+          <BlogArticle :time="article.published_date" :section="article.title" :views="article.number_read" :titles="article.summaries" :link="article.link" :id="article.id">
+            <p v-for="outline in article.sections">
+              {{ outline.section_content }}
             </p>
           </BlogArticle>
         </div>
@@ -53,6 +53,13 @@ p {
     family: "Roboto Mono", monospace;
     optical-sizing: auto;
     style: normal;
+  }
+  @media screen and (max-width: 1280px) {
+        font-size: 1em;
+    }
+
+  @media screen and (max-width: 768px) {
+      font-size: 0.9em;
   }
 }
 </style>

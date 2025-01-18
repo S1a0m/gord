@@ -2,12 +2,13 @@
 const props = defineProps([
     'activePage',
     'section',
-    'sectionColor'
+    'sectionColor',
+    'id'
 ])
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" :id="props.id">
     <div>
       <h4>{{ props.activePage }}@pxdev<span class="dollar">:</span><span :class="props.sectionColor">/{{ props.section }}~</span><span class="dollar">$</span></h4>
         <section>

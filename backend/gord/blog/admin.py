@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, Summary
+from .models import BlogPost, Summary, BlogPostSection
 
 
 @admin.register(BlogPost)
@@ -13,3 +13,7 @@ class BlogPostAdmin(admin.ModelAdmin):
 class SummaryAdmin(admin.ModelAdmin):
     list_display = ('summary', 'summary_link')
 
+
+@admin.register(BlogPostSection)
+class BlogPostSection(admin.ModelAdmin):
+    list_display = ('section_content',)

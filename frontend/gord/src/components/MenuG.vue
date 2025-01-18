@@ -107,7 +107,7 @@ nav {
     background-color: var(--mp-background);
 
   @media screen and (max-width: 768px) {
-    width: 15em;
+    width: 18em;
   }
 }
 

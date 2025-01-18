@@ -5,7 +5,7 @@ import { computed } from 'vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import LeftLayout from './components/LeftLayout.vue';
-import ProjTutSummary from './components/ProjTutSummary.vue';
+import BlogSummaries from './components/BlogSummaries.vue';
 
 const route = useRoute();
 
@@ -20,15 +20,22 @@ const pageTitles = {
   details: 'details',
 };
 
+// Stocker les données récupérées
+const blogSummaries = ref([]);
+
+// Fonction pour mettre à jour les données
+const updateBlogSummaries = (data) => {
+  blogSummaries.value = data;
+};
+
 // Utilisation de computed pour récupérer le titre dynamiquement
-const pageTitle = computed(() => pageTitles[route.name] || 'Page');
+const pageTitle = computed(() => pageTitles[route.name] || route.name);
 
 const search = ref('reduce-search-input');
 const hideGoSearch = ref(false);
 
 const toggleSearch = () => {
-  search.value =
-    search.value === 'reduce-search-input' ? 'show-search-input' : 'reduce-search-input';
+  search.value = search.value === 'reduce-search-input' ? 'show-search-input' : 'reduce-search-input';
   hideGoSearch.value = !hideGoSearch.value;
 };
 </script>
@@ -38,19 +45,18 @@ const toggleSearch = () => {
   <Header @toggle-search="toggleSearch"/>
   <div class="container">
    <div class="left-layout">
-    <ProjTutSummary v-if="route.name === 'project-details' || route.name === 'blog-details'"/>
-    <LeftLayout v-else/>
+    <BlogSummaries v-if="route.name === 'blog-id'" :summaries="blogSummaries"/>
+    <LeftLayout/>
    </div>
     <main>
       <h2>
         <span class="page-title">{{ pageTitle }}@pxdev:~$</span> 
         <form action="">
           <input type="search" name="search" :id="search" placeholder="Search">
-          <!--<Button type="square-v2" v-if="hideGoSearch"><input type="submit" value="Go" class="go-search"></Button>-->
         </form>
       </h2>
       <Transition name="fade" mode="out-in">
-        <RouterView />
+        <RouterView @blog-summary="updateBlogSummaries" />
       </Transition>
     </main>
   </div>

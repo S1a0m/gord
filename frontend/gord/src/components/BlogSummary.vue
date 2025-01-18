@@ -2,8 +2,10 @@
 import {RouterLink} from 'vue-router'
 
 const props = defineProps([
-  'titles'
-])
+  'titles',
+  'blogLink',
+  'id'
+])// `blog/${blogLink}/${title.summary_link}`
 </script>
 
 <template>
@@ -12,12 +14,8 @@ const props = defineProps([
       <nav>
         <span class="title">Summary</span>
         <span v-for="title in props.titles" :key="title.id">
-          <RouterLink :to="title.summary_link"><span>&#9900; {{ title.summary }}</span></RouterLink>
+          <RouterLink :to="{ path: `blog/${props.blogLink}`, query: { id: props.id }, hash: `#${title.summary_link}` }"><span>&#9900; {{ title.summary }}</span></RouterLink>
         </span>
-        <!--<RouterLink to="#"><span>&#9900; Lorem ipsum dolor sit amet, consectetur adipiscing</span></RouterLink>
-        <RouterLink to="#"><span>&#9900; Sed ut perspiciatis unde omnis iste natus error sit voluptatem</span></RouterLink>
-        <RouterLink to="#"><span>&#9900; Nemo enim ipsam voluptatem quia voluptas sit</span></RouterLink>
-        <RouterLink to="#"><span>&#9900; Nemo enim ipsam voluptatem quia voluptas</span></RouterLink>-->
       </nav>
     </div>
   </div>
@@ -42,7 +40,7 @@ nav {
   align-items: center;
   justify-content: center;
   background: var(--main-gray);
-  max-width: 42em;
+  max-width: 58em;
   height: 20em;
   overflow: auto;
   /*border-radius: 14px;
@@ -63,6 +61,14 @@ nav {
         height: 5px;
         background: var(--blue-light);
     }
+
+    @media screen and (max-width: 1280px) {
+        font-size: 1em;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.9em;
+    }
 }
 
 a span {
@@ -75,6 +81,13 @@ a span {
 
   &:hover {
     font-weight: 400;
+  }
+  @media screen and (max-width: 1280px) {
+        font-size: 1em;
+    }
+
+  @media screen and (max-width: 768px) {
+      font-size: 0.9em;
   }
 }
 </style>
