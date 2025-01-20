@@ -7,20 +7,23 @@ import ArticleBase from '../components/ArticleBase.vue';
   <div class="content">
     <div class="section">
       <ArticleBase active-page="about" section-color="section" section="Présentation Personnelle">
-        <img src="../components/icons/hacker.jpg" alt="Avatar de l'auteur" class="avatar">
-        <br><br>
-        <p>
-        Béninois, poète en mes heures perdues, passionné de technologie depuis ma tendre enfance, j'ai découvert l'essence même de l'informatique après avoir repris
-        ma première année de mathématique. Depuis, je m'y suis accroché. Je suis tout le temps dans une nouvelle quête de 
-        connaissance en informatique et je ne m'en lasse jamais. On peut dire que j'en suis devenu vraiment accro. Mes compétences
-        en mathématique font de mes projets des outils impeccables dont je suis extrêmement fier. <br><br>
-        Mes passe-temps favoris restent prioritairement les projets informatiques sur lesquels je travaille, les jeux vidéo et aussi les mangas. <br>
-        Ah! J'oubliais. J'adore aussi les maths 🥰.
-        </p>
+        <div class="backg-hov">
+          <img src="../components/icons/hacker.jpg" alt="Avatar de l'auteur" class="avatar">
+          <br><br>
+          <p>
+          Béninois, poète en mes heures perdues, passionné de technologie depuis ma tendre enfance, j'ai découvert l'essence même de l'informatique après avoir repris
+          ma première année de mathématique. Depuis, je m'y suis accroché. Je suis tout le temps dans une nouvelle quête de 
+          connaissance en informatique et je ne m'en lasse jamais. On peut dire que j'en suis devenu vraiment accro. Mes compétences
+          en mathématique font de mes projets des outils impeccables dont je suis extrêmement fier. <br><br>
+          Mes passe-temps favoris restent prioritairement les projets informatiques sur lesquels je travaille, les jeux vidéo et aussi les mangas. <br>
+          Ah! J'oubliais. J'adore aussi les maths 🥰.
+          </p>
+        </div>
       </ArticleBase>
     </div>
     <div class="section">
       <ArticleBase active-page="about" section-color="section" section="Parcours Académiques et Professionnel">
+        <div class="backg-hov">
         
         J'ai obtenu tous mes diplômes au Bénin. <br><br>
         <ul>
@@ -32,40 +35,43 @@ import ArticleBase from '../components/ArticleBase.vue';
         <p>
         Je travaille actuellement en tant que développeur freelance sur des plateformes bien connues comme <RouterLink to="/comeup"><b>ComeUp</b></RouterLink> et <RouterLink to="/upwork"><b>UpWork</b></RouterLink>.
         </p>
+        </div>
       </ArticleBase>
     </div>
     <div class="section">
       <ArticleBase active-page="about" section-color="section" section="Compétences">
-        <ul>
-          <li><b>Programmation</b>
-            <ul>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>C</li>
-              <li>C++</li>
-              <li>Rust</li>
-              <li>HTML, CSS & SASS</li>
-              <li>SQL</li>
-            </ul>
-          </li><br>
-          <li><b>Frameworks</b>
-            <ul>
-              <li>Django (REST Framework)</li>
-              <li>Vue-Ionic</li>
-              <li>Vue.js</li>
-              <li>Qt</li>
-              <li>Slint</li>
-            </ul>
-          </li><br>
-          <li><b>Autres</b>
-            <ul>
-              <li>Maintenance des ordinateurs</li>
-              <li>Mathématiques</li>
-              <li>Hacking (CTF Player)</li>
-              <li>Électronique (Systèmes embarqués - Arduino)</li>
-            </ul>
-          </li><br>
-        </ul>
+        <div class="backg-hov">
+          <ul>
+            <li><b>Programmation</b>
+              <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Rust</li>
+                <li>HTML, CSS & SASS</li>
+                <li>SQL</li>
+              </ul>
+            </li><br>
+            <li><b>Frameworks</b>
+              <ul>
+                <li>Django (REST Framework)</li>
+                <li>Vue-Ionic</li>
+                <li>Vue.js</li>
+                <li>Qt</li>
+                <li>Slint</li>
+              </ul>
+            </li><br>
+            <li><b>Autres</b>
+              <ul>
+                <li>Maintenance des ordinateurs</li>
+                <li>Mathématiques</li>
+                <li>Hacking (CTF Player)</li>
+                <li>Électronique (Systèmes embarqués - Arduino)</li>
+              </ul>
+            </li><br>
+          </ul>
+        </div>
       </ArticleBase>
     </div>
     <div class="go-projects">
@@ -99,6 +105,15 @@ ul {
   margin-left: 1em;
 }
 
+.backg-hov {
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.backg-hov:hover {
+  background: var(--hover-article);
+}
+
 p, ul {
 
   @media screen and (max-width: 1280px) {
@@ -122,5 +137,11 @@ p, ul {
     max-width: 310px;
     height: 410px;
   }
+}
+
+@media screen and (max-width: 744px) {
+  .backg-hov {
+        background: var(--hover-article);
+    }
 }
 </style>

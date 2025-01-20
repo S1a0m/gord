@@ -5,8 +5,9 @@ import apiClient from '../axios';
 const props = defineProps([
   'titles',
   'blogLink',
-  'id'
-])// `blog/${blogLink}/${title.summary_link}`
+  'id',
+  'illustration'
+])
 
 const addNumViews = async () => {
   try {
@@ -19,7 +20,7 @@ const addNumViews = async () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" :style="{ backgroundImage: `url(${props.illustration})` }">
     <div class="summary">
       <nav>
         <span class="title">Summary</span>
@@ -33,6 +34,10 @@ const addNumViews = async () => {
 
 <style lang="scss" scoped>
 .container {
+  padding: 3em;
+  background-image: url('./icons/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
     margin: {
         bottom: 2em;
         top: 1em;
@@ -50,11 +55,10 @@ nav {
   align-items: center;
   justify-content: center;
   background: var(--main-gray);
+  opacity: 0.9;
   max-width: 58em;
   height: 20em;
   overflow: auto;
-  /*border-radius: 14px;
-  border-color: #288F9E;*/
 }
 
 .title {

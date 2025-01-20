@@ -1,21 +1,54 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import ArticleBase from '../components/ArticleBase.vue'
+import { useRoute } from 'vue-router';
+import apiClient from '../axios';
+import { ref, onMounted } from 'vue';
+import SuccesMessage from '@/components/SuccesMessage.vue';
+
+const route = useRoute();
+
+const unsubscribed_msg = ref();
+const error = ref(null);
+const successMessage = ref(null);
+
+const fetchUnsubscribed_msg = async () => {
+  try {
+    const response = await apiClient.get(`/newsletter/subscribe/unsubscribe/?token=${route.params.token}`);
+    unsubscribed_msg.value = response.data;
+    successMessage.value.show('success');
+  } catch(err) {
+    unsubscribed_msg.value = error.response?.data?.error || 'Une erreur est survenue.';
+    if(route.params.token.length !== 0) {
+      successMessage.value.show('error');
+    }
+  }
+};
+
+onMounted(() => {
+  fetchUnsubscribed_msg();
+})
 </script>
 
 <template>
         <ArticleBase active-page="home" section-color="section" section="Hola, je suis Précieux Samson AMOUSSOU">
-          <img src="../components/icons/hacker.jpg" alt="" class="avatar">
-          <p>
-            Développeur Full-Stack et passionné de technologie, je propose mes services pour la conception et le développement de projets web, mobiles et logiciels sur mesure. Mon expertise couvre une large gamme de technologies, dont HTML, CSS, JavaScript, Vue.js, Django, Qt et Rust, ainsi que l'intégration de bases de données SQL. <br><br>
+          <div class="backg-hov">
+            <img src="../components/icons/hacker.jpg" alt="" class="avatar">
+            <p>
+              Développeur Full-Stack et passionné de technologie, je propose mes services pour la conception et le développement de projets web, mobiles et logiciels sur mesure. Mon expertise couvre une large gamme de technologies, dont HTML, CSS, JavaScript, Vue.js, Django, Qt et Rust, ainsi que l'intégration de bases de données SQL. <br><br>
 
-Je réalise des sites web modernes et performants, des applications mobiles intuitives et des outils logiciels robustes adaptés aux besoins spécifiques de mes clients. Par ailleurs, ma passion pour la cybersécurité me permet d'offrir des solutions sûres et optimisées. <br><br>
+              Je réalise des sites web modernes et performants, des applications mobiles intuitives et des outils logiciels robustes adaptés aux besoins spécifiques de mes clients. Par ailleurs, ma passion pour la cybersécurité me permet d'offrir des solutions sûres et optimisées. <br><br>
 
-Que ce soit pour créer une interface utilisateur attractive, développer un système backend puissant ou sécuriser vos projets, je mets tout en œuvre pour répondre à vos attentes avec rigueur et créativité. Mon objectif est de transformer vos idées en solutions concrètes et efficaces. <br>
-            <span class="link"><RouterLink to="/about">Voir plus de détails en cliquant ici</RouterLink></span> <br><br>
-            Ou allez sur cette page pour <span class="link"><RouterLink to="/projects">consulter mes projets</RouterLink></span>
-          </p>
+              Que ce soit pour créer une interface utilisateur attractive, développer un système backend puissant ou sécuriser vos projets, je mets tout en œuvre pour répondre à vos attentes avec rigueur et créativité. Mon objectif est de transformer vos idées en solutions concrètes et efficaces. <br>
+              <span class="link"><RouterLink to="/about">Voir plus de détails en cliquant ici</RouterLink></span> <br><br>
+              Ou allez sur cette page pour <span class="link"><RouterLink to="/projects">consulter mes projets</RouterLink></span>
+            </p>
+          </div>
         </ArticleBase>
+        <!-- Succès si le désabonnement est bien effectué -->
+        <SuccesMessage ref="successMessage" @success-displayed="handleSuccess">
+          {{ unsubscribed_msg }}
+        </SuccesMessage>
 </template>
 
 <style lang="scss" scoped>
@@ -35,6 +68,15 @@ Que ce soit pour créer une interface utilisateur attractive, développer un sys
   }
 }
 
+.backg-hov {
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.backg-hov:hover {
+  background: var(--hover-article);
+}
+
 p {
   margin-top: 1.5em;
   font-size: 16px;
@@ -52,5 +94,11 @@ p {
   @media screen and (max-width: 768px) {
       font-size: 0.9em;
   }
+}
+
+@media screen and (max-width: 744px) {
+  .backg-hov {
+        background: var(--hover-article);
+    }
 }
 </style>

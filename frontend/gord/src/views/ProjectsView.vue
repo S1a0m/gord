@@ -105,4 +105,10 @@ onMounted(() => {
   flex-wrap: wrap;
   gap: 3em;
 }
+
+@media screen and (max-width: 744px) {
+  .backg-hov {
+        background: var(--hover-article);
+    }
+}
 </style>

@@ -7,6 +7,7 @@ class BlogPost(models.Model):
     published_date = models.DateField()
     link = models.CharField(max_length=400, blank=True)
     number_read = models.PositiveIntegerField(default=0)
+    illustration = models.ImageField(upload_to='illustrations/', null=True, blank=True)
 
     def __str__(self):
         return self.title

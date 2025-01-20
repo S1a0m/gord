@@ -1,78 +1,128 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import { ref, onMounted, onUnmounted } from 'vue';
+import apiClient from '../axios';
 import ArticleBase from '../components/ArticleBase.vue';
 
-// Témoignages fictifs
-const testimonials = ref([
-  "Superbe expérience de travail, très professionnel !",
-  "Une expertise technique impressionnante, bravo !",
-  "Créatif, efficace et agréable à collaborer.",
-  "Toujours à l'écoute et fournit des solutions adaptées.",
-  "Un plaisir de travailler avec quelqu'un d'aussi talentueux."
-]);
+// Références pour les carrousels
+const professionalExperiences = ref([]);
+const testimonials = ref([]);
 
-// Indice du témoignage affiché
-const currentIndex = ref(0);
+// Indices pour les carrousels
+const currentExperienceIndex = ref(0);
+const currentTestimonialIndex = ref(0);
 
-// Défiler automatiquement les témoignages toutes les 5 secondes
-let interval = null;
+// Intervalle pour les carrousels
+let experienceInterval = null;
+let testimonialInterval = null;
 
-const startCarousel = () => {
-  interval = setInterval(() => {
-    currentIndex.value = (currentIndex.value + 1) % testimonials.value.length;
-  }, 5000);
-};
-
-const stopCarousel = () => {
-  if (interval) {
-    clearInterval(interval);
-    interval = null;
+// Charger les données depuis le backend
+const fetchData = async () => {
+  try {
+    // Adapter les URLs selon vos endpoints backend
+    const experienceResponse = await apiClient.get('portfolio/experiences');
+    const testimonialResponse = await apiClient.get('portfolio/testimonials');
+    professionalExperiences.value = experienceResponse.data;
+    testimonials.value = testimonialResponse.data;
+  } catch (error) {
+    console.error('Erreur lors du chargement des données :', error);
   }
 };
 
-// Démarrer et arrêter le carousel selon le cycle de vie du composant
-onMounted(startCarousel);
-onUnmounted(stopCarousel);
+// Gestion des carrousels
+const startExperienceCarousel = () => {
+  experienceInterval = setInterval(() => {
+    currentExperienceIndex.value = 
+      (currentExperienceIndex.value + 1) % professionalExperiences.value.length;
+  }, 5000);
+};
 
-// Naviguer manuellement
+const startTestimonialCarousel = () => {
+  testimonialInterval = setInterval(() => {
+    currentTestimonialIndex.value = 
+      (currentTestimonialIndex.value + 1) % testimonials.value.length;
+  }, 5000);
+};
+
+const stopCarousels = () => {
+  if (experienceInterval) clearInterval(experienceInterval);
+  if (testimonialInterval) clearInterval(testimonialInterval);
+};
+
+// Cycle de vie du composant
+onMounted(async () => {
+  await fetchData();
+  startExperienceCarousel();
+  startTestimonialCarousel();
+});
+
+onUnmounted(() => {
+  stopCarousels();
+});
+
+// Navigation manuelle
+const nextExperience = () => {
+  currentExperienceIndex.value = 
+    (currentExperienceIndex.value + 1) % professionalExperiences.value.length;
+};
+
+const prevExperience = () => {
+  currentExperienceIndex.value =
+    (currentExperienceIndex.value - 1 + professionalExperiences.value.length) %
+    professionalExperiences.value.length;
+};
+
 const nextTestimonial = () => {
-  currentIndex.value = (currentIndex.value + 1) % testimonials.value.length;
+  currentTestimonialIndex.value = 
+    (currentTestimonialIndex.value + 1) % testimonials.value.length;
 };
 
 const prevTestimonial = () => {
-  currentIndex.value =
-    (currentIndex.value - 1 + testimonials.value.length) %
+  currentTestimonialIndex.value =
+    (currentTestimonialIndex.value - 1 + testimonials.value.length) %
     testimonials.value.length;
 };
 </script>
 
 
+
 <template>
   <div class="content">
+    <!-- Section Expériences Professionnelles -->
     <div class="section">
       <ArticleBase active-page="portfolio" section-color="section" section="Certifications et Récompenses">
         <div class="c-r">
-          <p>{{ testimonials[currentIndex] }}</p>
+          <p v-if="professionalExperiences.length">
+            {{ professionalExperiences[currentExperienceIndex].about }}
+            <a :href="professionalExperiences[currentExperienceIndex].proof_link" v-if="professionalExperiences[currentExperienceIndex].proof_link.length">ici</a>
+          </p>
           <div class="controls">
-            <button @click="prevTestimonial">◀</button>
-            <button @click="nextTestimonial">▶</button>
+            <button @click="prevExperience">◀</button>
+            <button @click="nextExperience">▶</button>
           </div>
         </div>
-        <!--<div class="c-r">
-          <div class="certificates">
-            <p>Certifications</p>
-          </div>
-          <div class="rewards">
-            <p>Récompenses</p>
-          </div>
-        </div>-->
       </ArticleBase>
     </div>
+
+    <!-- Section Témoignages -->
     <div class="section">
       <ArticleBase active-page="portfolio" section-color="section" section="Témoignages">
         <div class="testimony">
-          <p>{{ testimonials[currentIndex] }}</p>
+          <p v-if="testimonials.length">
+            <span class="quotes">"</span>
+            {{ testimonials[currentTestimonialIndex].message }}
+            <span class="quotes">"</span>
+          </p>
+          <div class="about-author">
+            <img 
+              v-if="testimonials.length"
+              :src="testimonials[currentTestimonialIndex].avatar" 
+              alt="" 
+              class="avatar">
+            <b v-if="testimonials.length" class="author-name">
+              {{ testimonials[currentTestimonialIndex].author_name }}
+            </b>
+          </div>
           <div class="controls">
             <button @click="prevTestimonial">◀</button>
             <button @click="nextTestimonial">▶</button>
@@ -80,6 +130,8 @@ const prevTestimonial = () => {
         </div>
       </ArticleBase>
     </div>
+
+    <!-- Lien vers les projets -->
     <div class="go-projects">
       <RouterLink to="/projects">Consultez ici mes projets</RouterLink>
     </div>
@@ -87,11 +139,34 @@ const prevTestimonial = () => {
 </template>
 
 
+
 <style lang="scss" scoped>
 .content {
   .section {
     margin-bottom: 2em;
   }
+}
+
+.about-author {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.author-name {
+  font-style: oblique;
+  color: var(--blue-light);
+  @media screen and (max-width: 1280px) {
+    font-size: 0.8em;
+  }
+}
+
+.quotes {
+  font-weight: bold;
+  font-size: 3em;
+  font-style: italic;
 }
 
 .c-r, .testimony {
@@ -102,6 +177,7 @@ const prevTestimonial = () => {
   font-size: 20px;
   color: var(--main-white);
   background: var(--main-gray);
+  overflow: hidden;
   border: {
     style: solid;
     color: var(--blue-light);
@@ -116,10 +192,9 @@ const prevTestimonial = () => {
   position: relative;
 
   p {
-    margin: 0;
     text-align: center;
     font-size: 1em;
-    padding: 0 1em;
+    //padding: 0 1em;
     @media screen and (max-width: 1280px) {
         font-size: 0.8em;
     }
@@ -169,10 +244,17 @@ const prevTestimonial = () => {
   }
 }
 
+.avatar {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  position: relative;
+}
+
 @media screen and (max-width: 696px) {
   .testimony, .c-r {
     width: 302px;
-    height: 469px;
+    height: 410px;
 
     .controls {
       button {
@@ -187,7 +269,7 @@ const prevTestimonial = () => {
 @media screen and (max-width: 335px) {
   .testimony, .c-r {
     width: 290px;
-    height: 467px;
+    height: 410px;
 
     .controls {
       button {
@@ -197,5 +279,11 @@ const prevTestimonial = () => {
       }
     }
   }
+}
+
+@media screen and (max-width: 744px) {
+  .backg-hov {
+        background: var(--hover-article);
+    }
 }
 </style>

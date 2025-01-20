@@ -22,7 +22,7 @@ class BlogPostViewSet(viewsets.ReadOnlyModelViewSet):
     # Liste tous les blogs avec leurs sommaires (et sections "outlines" seulement)
     def list(self, request, *args, **kwargs):
         blogs = BlogPost.objects.all()
-        serializer = BlogPostListSerializer(blogs, many=True)
+        serializer = BlogPostListSerializer(blogs, many=True, context={'request': request})
         return Response(serializer.data)
 
     # Récupère un blog spécifique avec toutes ses sections (y compris outlines et autres)
@@ -33,7 +33,7 @@ class BlogPostViewSet(viewsets.ReadOnlyModelViewSet):
         except BlogPost.DoesNotExist:
             return Response({"detail": "Not found."}, status=404)
 
-        serializer = BlogPostDetailSerializer(blog)
+        serializer = BlogPostDetailSerializer(blog, context={'request': request})
         return Response(serializer.data)
 
     @action(detail=True, methods=['post'])

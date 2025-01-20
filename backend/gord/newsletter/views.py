@@ -41,7 +41,7 @@ class SubscriberViewSet(viewsets.ViewSet):
         """
         token = request.query_params.get('token')
         if not token:
-            return Response({"error": "Token is required"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Token is required"}, status=status.HTTP_400_BAD_REQUEST)
 
         subscriber = get_object_or_404(Subscriber, unsubscribe_token=token)
         subscriber.is_active = False

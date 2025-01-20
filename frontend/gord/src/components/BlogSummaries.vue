@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import LeftLayout from './LeftLayout.vue';
 import { RouterLink } from 'vue-router';
-// import { watch } from 'vue';
 
 const props = defineProps([
   'summaries'
@@ -46,7 +45,8 @@ header {
     justify-content: space-between;
     align-items: center;
     font-family: "Roboto", system-ui;
-    padding: 1em;
+    width: fit-content;
+    //padding: 1em;
 
     h3 {
         font-family: "Roboto Mono", system-ui;
@@ -55,6 +55,7 @@ header {
         justify-content: center;
         height: 2em;
         width: 7em;
+        margin-left: 0.5em;
         border-radius: 14px;
         color: var(--blue-light);
         cursor: pointer;

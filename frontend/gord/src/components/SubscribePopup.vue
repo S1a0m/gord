@@ -1,51 +1,65 @@
 <script setup>
-import Button from './Button.vue';  
+import Button from './Button.vue';
 import { ref } from 'vue';
 import apiClient from '../axios'; // Instance Axios configurée
+import SuccesMessage from './SuccesMessage.vue';
 
-const emit = defineEmits([ 'close-subscribepopup' ])
+const emit = defineEmits(['close-subscribepopup']);
 
 const closeSubscribepopup = () => {
-    emit('close-subscribepopup');
-}
+  emit('close-subscribepopup');
+};
 
 const email = ref('');
 const message = ref('');
+const successMessage = ref(null); // Référence pour le composant SuccesMessage
 
 const subscribeToNewsletter = async () => {
   if (!email.value) {
     message.value = 'Veuillez entrer une adresse email.';
-    alert(message.value);
+    successMessage.value.show('error'); // Affiche une erreur
     return;
   }
 
   try {
     const response = await apiClient.post('/newsletter/subscribe/', { email: email.value });
     message.value = response.data.message;
-    alert(message.value); // Affiche le message
+    successMessage.value.show('success'); // Affiche le succès
     email.value = ''; // Réinitialise le champ email
   } catch (error) {
-    console.error(error);
     message.value = error.response?.data?.error || 'Une erreur est survenue.';
-    alert(message.value); // Affiche l'erreur
+    successMessage.value.show('error'); // Affiche une erreur
   }
+};
+
+const handleSuccess = () => {
+  closeSubscribepopup();
 };
 </script>
 
-
 <template>
     <div class="subscribe-form">
-        <form @submit.prevent="subscribeToNewsletter">
-            <!--<label for="email">Enter your mail here</label>-->
-            <div>
-                <input type="email" name="email" id="email" v-model="email" placeholder="Enter your mail here">
-                <Button type="subscribe-button" @click="closeSubscribepopup">
-                    <span class="submit">Submit</span>
-                </Button>
-            </div>
-        </form>
+      <form @submit.prevent="subscribeToNewsletter">
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            v-model="email"
+            placeholder="Enter your mail here"
+          />
+          <Button type="subscribe-button">
+            <span class="submit">Submit</span>
+          </Button>
+        </div>
+      </form>
+  
+      <!-- Composant SuccesMessage -->
+      <SuccesMessage ref="successMessage" @success-displayed="handleSuccess">
+        {{ message }}
+      </SuccesMessage>
     </div>
-</template>
+  </template>
 
 <style lang="scss" scoped>
 .submit {

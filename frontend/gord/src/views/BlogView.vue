@@ -11,7 +11,7 @@ const isLoading = ref(true);
 const fetchArticles = async () => {
   try {
     const response = await apiClient.get('/blog/blog-posts/');
-    articles.value = response.data;
+    articles.value = response.data.sort((a, b) => b.id - a.id);
   } catch(err) {
     error.value = "Une erreur est survenue."
     console.error(err);
@@ -32,7 +32,7 @@ onMounted(() => {
         </p>
         <p v-else-if="error">{{ error }}</p>
         <div class="section" v-for="article in articles" :key="article.id">
-          <BlogArticle :time="article.published_date" :section="article.title" :views="article.number_read" :titles="article.summaries" :link="article.link" :id="article.id">
+          <BlogArticle :time="article.published_date" :section="article.title" :views="article.number_read" :titles="article.summaries" :link="article.link" :id="article.id" :illustration="article.illustration">
             <p v-for="outline in article.sections">
               {{ outline.section_content }}
             </p>

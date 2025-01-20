@@ -23,7 +23,7 @@ const closeMpg = () => {
                     </p>
                     <p class="details">
                         <span class="w-e">Whatsapp:</span><span>+229 01 54 14 12 87</span>
-                        <span class="w-e">Email:</span><span>precieuxdev1@gmail.com</span>
+                        <span class="w-e">Email:</span><span><a href="mailto:precieuxdev1@gmail.com">precieuxdev1@gmail.com</a></span>
                     </p>
                 </div>
                 <div class="git-mentions">
@@ -72,6 +72,10 @@ $footer-height: 20vh;
         width: 100%;
         height: 100%;
         align-items: center;
+    }
+    @media screen and (max-width: 513px) {
+        height: 17em;
+        padding-top: 1em;
     }
 }
 

@@ -6,7 +6,6 @@ import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import LeftLayout from './components/LeftLayout.vue';
 import BlogSummaries from './components/BlogSummaries.vue';
-import Loader from './components/Loader.vue';
 
 const route = useRoute();
 
@@ -20,6 +19,7 @@ const pageTitles = {
   faq: 'faq',
   details: 'details',
 };
+
 
 // Stocker les données récupérées
 const blogSummaries = ref([]);
@@ -49,7 +49,7 @@ const toggleSearch = () => {
   <Header @toggle-search="toggleSearch"/>
   <div class="container">
    <div class="left-layout">
-    <BlogSummaries v-if="route.name === 'blog-id'" :summaries="blogSummaries"/>
+    <BlogSummaries v-if="route.name === 'blog-lecture'" :summaries="blogSummaries"/>
     <LeftLayout/>
    </div>
     <main>
@@ -163,13 +163,22 @@ section {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.5s ease;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+  transform: translateY(15px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: none;
+  }
+}
+
 
 @media screen and (max-width: 1280px) {
   .left-layout {

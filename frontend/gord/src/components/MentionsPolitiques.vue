@@ -30,9 +30,9 @@ const closeMpg = () => {
             <h4>2. Hébergement</h4>
             <p>
                 Le site est hébergé par :<br>
-                <b>Nom de l’hébergeur :</b> AfriRegister<br>
-                <b>Adresse :</b> [Adresse de l’hébergeur]<br>
-                <b>Téléphone :</b> [Numéro de téléphone de l’hébergeur]
+                <b>Nom de l’hébergeur :</b> 001.africa<br>
+                <b>Adresse :</b> Cotonou - Bénin<br>
+                <b>Téléphone :</b> +229 01 52 68 68 68
             </p>
 
             <h4>3. Propriété intellectuelle</h4>
@@ -57,7 +57,7 @@ const closeMpg = () => {
 
             <h4>1. Responsable du traitement des données</h4>
             <p>
-                <b>Nom de la société :</b> AMO-IV<br>
+                <b>Nom de la société :</b> PxDev.AMO-IV<br>
                 <b>Adresse :</b> Tchinvié - Porto-Novo - Bénin<br>
                 <b>Email de contact :</b> precieuxdev1@gmail.com
             </p>

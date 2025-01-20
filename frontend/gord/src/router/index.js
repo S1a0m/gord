@@ -5,16 +5,14 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/:token?',
       name: 'home',
+      props: true,
       component: HomeView
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when them404 route is visited.
       component: () => import('../views/AboutView.vue')
     },
     {
@@ -29,7 +27,7 @@ const router = createRouter({
     },
     {
       path: '/blog/:id',
-      name: 'blog-id',
+      name: 'blog-lecture',
       component: () => import('../views/BlogDetailsView.vue'),
       props: true
     },
@@ -42,7 +40,17 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
       component: () => import('../views/ProjectsView.vue')
-    }
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: () => import('../views/ErrorView.vue')
+    },
+    // Wildcard route for undefined paths
+    {
+      path: '/:pathMatch(.*)*', // Matches any path not defined above
+      redirect: '/error', // Redirect to error page
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if(to.hash) {

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="106.17492mm"
+   height="96.242531mm"
+   viewBox="0 0 106.17492 96.24253"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="logo_pxdev.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.69664703"
+     inkscape:cx="238.28423"
+     inkscape:cy="292.83122"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-41.721118,-70.877832)">
+    <path
+       style="font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-rule:evenodd;stroke-width:0.0942523"
+       id="path1514"
+       sodipodi:type="arc"
+       sodipodi:cx="99.992767"
+       sodipodi:cy="120.52695"
+       sodipodi:rx="43.608002"
+       sodipodi:ry="43.608002"
+       sodipodi:start="5.9904257"
+       sodipodi:end="5.8645232"
+       sodipodi:arc-type="arc"
+       d="M 141.7453,107.94187 A 43.608002,43.608002 0 0 1 113.88558,161.86274 43.608002,43.608002 0 0 1 59.114663,135.71373 43.608002,43.608002 0 0 1 83.527055,80.147025 43.608002,43.608002 0 0 1 139.83451,102.79862"
+       sodipodi:open="true" />
+    <path
+       style="font-variation-settings:'wght' 700;opacity:0.999749;fill:#0a0a0a;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0758808"
+       id="path1514-3"
+       sodipodi:type="arc"
+       sodipodi:cx="99.848862"
+       sodipodi:cy="120.11152"
+       sodipodi:rx="35.108002"
+       sodipodi:ry="35.108002"
+       sodipodi:start="5.9904257"
+       sodipodi:end="5.8645232"
+       sodipodi:arc-type="arc"
+       d="M 133.46306,109.97951 A 35.108002,35.108002 0 0 1 111.03371,153.39021 35.108002,35.108002 0 0 1 66.93865,132.33812 35.108002,35.108002 0 0 1 86.592619,87.602385 35.108002,35.108002 0 0 1 131.92471,105.83877"
+       sodipodi:open="true" />
+    <rect
+       style="font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0319603"
+       id="rect1705"
+       width="21.213646"
+       height="9.5898333"
+       x="43.40052"
+       y="72.340637"
+       ry="0"
+       rx="0" />
+    <rect
+       style="font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0708564"
+       id="rect1705-7"
+       width="57.711491"
+       height="17.326004"
+       x="94.231194"
+       y="38.969666"
+       ry="0"
+       rx="0"
+       transform="matrix(0.80189674,0.59746265,0,1,0,0)" />
+    <rect
+       style="font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.0313118"
+       id="rect1705-6"
+       width="20.361525"
+       height="9.589817"
+       x="72.709564"
+       y="-51.947723"
+       ry="0"
+       rx="0"
+       transform="matrix(0.00477511,0.9999886,-0.99999963,8.6069762e-4,0,0)" />
+    <text
+       xml:space="preserve"
+       style="font-size:32.0991px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, @wght=700';font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.16871"
+       x="89.274666"
+       y="132.30043"
+       id="text3882"
+       transform="scale(1.1672958,0.8566809)"><tspan
+         sodipodi:role="line"
+         id="tspan3880"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32.0991px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Bold Italic';fill:#288f9e;fill-opacity:1;stroke-width:0.16871"
+         x="89.274666"
+         y="132.30043">P</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16.9333px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, @wght=700';font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.089"
+       x="79.099815"
+       y="144.3712"
+       id="text3936"><tspan
+         sodipodi:role="line"
+         id="tspan3934"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Bold Italic';fill:#288f9e;fill-opacity:1;stroke-width:0.089"
+         x="79.099815"
+         y="144.3712">X</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, @wght=700';font-variation-settings:'wght' 700;opacity:0.999749;fill:#288f9e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.089"
+       x="87.725319"
+       y="148.86644"
+       id="text3940"><tspan
+         sodipodi:role="line"
+         id="tspan3938"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.7px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Bold Italic';fill:#288f9e;fill-opacity:1;stroke-width:0.089"
+         x="87.725319"
+         y="148.86644">Dev</tspan></text>
+  </g>
+</svg>

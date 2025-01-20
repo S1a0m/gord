@@ -12,7 +12,8 @@ const props = defineProps([
     'views',
     'titles',
     'link',
-    'id'
+    'id',
+    'illustration'
 ])
 
 const addNumViews = async () => {
@@ -35,7 +36,7 @@ const addNumViews = async () => {
                     <span>Vue: {{ props.views }}</span>
                 </div>
             </header>
-            <BlogSummary :titles="props.titles" :blog-link="props.link" :id="props.id"/>
+            <BlogSummary :titles="props.titles" :blog-link="props.link" :id="props.id" :illustration="props.illustration" />
             <RouterLink :to="{ path: `blog/${props.link}`, query: { id: props.id } }" @click="addNumViews">
                 <div class="content">
                         <slot></slot>
@@ -99,6 +100,7 @@ header {
 @media screen and (max-width: 744px) {
     article {
         width: 80vw;
+        background: var(--hover-article);
     }
 }
 </style>

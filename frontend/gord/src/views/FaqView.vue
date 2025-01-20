@@ -32,9 +32,11 @@ onMounted(() => {
       <p v-else-if="error">{{ error }}</p>
       <div class="section" v-for="i in faq" :key="i.id">
         <ArticleBase active-page="faq" section-color="section" :section="i.question">
-          <p>
-            {{ i.response }}
-          </p>
+          <div class="backg-hov">
+            <p>
+              {{ i.response }}
+            </p>
+          </div>
         </ArticleBase>
       </div>
 </template>
@@ -56,5 +58,20 @@ p {
   @media screen and (max-width: 1280px) {
     font-size: 0.9em;
   }
+}
+
+.backg-hov {
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.backg-hov:hover {
+  background: var(--hover-article);
+}
+
+@media screen and (max-width: 744px) {
+  .backg-hov {
+        background: var(--hover-article);
+    }
 }
 </style>

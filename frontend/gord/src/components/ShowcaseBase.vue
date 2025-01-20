@@ -34,7 +34,7 @@ const addNumViews = async () => {
             <div class="content">
                 <span class="title"><b>{{ props.name }}</b></span>
                 <div class="sommary">{{ props.sommary }}</div>
-                <span class="li"><RouterLink :to="props.details" @click="addNumViews"><span class="nk">Lire la doc ...</span></RouterLink></span>
+                <span class="li"><a :href="props.details" @click="addNumViews" title="Allez sur github"><span class="nk">Voir plus ...</span></a></span>
             </div>
             <footer>
                 <div class="views">
@@ -68,6 +68,10 @@ article {
         height: 280px;
         width: 280px;
     }
+}
+
+.title {
+    color: var(--blue-dark);
 }
 
 .container {

@@ -3,11 +3,20 @@ import { ref } from 'vue';
 import Button from './Button.vue'  
 import SubscribePopup from './SubscribePopup.vue';
 import MenuG from './MenuG.vue';
+import SuccesMessage from './SuccesMessage.vue';
 
 const showSubscribePopup = ref(false);
+const successMessage = ref(null); 
+const message = ref('');
 
 const toggleSubscribePopup = () => {
     showSubscribePopup.value = !showSubscribePopup.value;
+}
+
+const toggleSubscribePopupSuccess = () => {
+    showSubscribePopup.value = !showSubscribePopup.value;
+    message.value = "Votre email a été enregistré avec succès"
+    successMessage.value.show('success');
 }
 
 const emit = defineEmits([ 'toggle-search' ]);
@@ -37,11 +46,11 @@ const toggleMenu = () => {
 
 <template>
     <Transition>
-        <SubscribePopup v-if="showSubscribePopup" @close-subscribepopup="toggleSubscribePopup"/>
+        <SubscribePopup v-if="showSubscribePopup" @close-subscribepopup="toggleSubscribePopupSuccess"/>
     </Transition>
     <div id="banner">
         <div id="logo">
-            PxDev
+            <img src="./icons/logo_pxdev.svg" alt="">
         </div>
         <div>
             <span class="search-icon">
@@ -77,6 +86,9 @@ const toggleMenu = () => {
             </Button>
         </div>
     </div>
+    <SuccesMessage ref="successMessage" @success-displayed="handleSuccess">
+        {{ message }}
+    </SuccesMessage>
 </template>
 
 <style lang="scss" scoped>
@@ -115,7 +127,7 @@ $logo-color: #FFD700;
 #logo {
     color: $logo-color;
     font-size: 2.5em; // Taille par défaut
-    margin-left: 1em;
+    margin-left: 0.2em;
     font-family: "Roboto", system-ui;
     font-weight: 900;
 
@@ -144,6 +156,21 @@ $logo-color: #FFD700;
             margin-right: 0.5em;
         }
     }
+
+    img {
+        height: 70px;
+        width: 70px;
+        margin-top: 0.2em;
+        @media screen and (max-width: 768px) {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
+
+.logo-icon {
+    height: 2.5em;
+    width: 2.5em;
 }
 
 // Images
@@ -207,7 +234,7 @@ img {
 
     @media screen and (max-width: 1280px) {
         display: block;
-        margin-left: 0.5em;
+        left: 0.5em;
     }
 
     @media screen and (max-width: 768px) {
