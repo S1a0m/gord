@@ -60,7 +60,7 @@ const toggleMenu = () => {
             </span>
             <span>
                 <Button type="subscribe-button" @click="toggleSubscribePopup">
-                    <span class="subscribe">Subscribe</span>
+                    <span class="subscribe">S'abonner</span>
                 </Button>
             </span>
             <span>

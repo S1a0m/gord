@@ -133,7 +133,7 @@ const prevTestimonial = () => {
 
     <!-- Lien vers les projets -->
     <div class="go-projects">
-      <RouterLink to="/projects">Consultez ici mes projets</RouterLink>
+      Consultez ici <RouterLink to="/projects">mes projets</RouterLink>.
     </div>
   </div>
 </template>
@@ -177,7 +177,7 @@ const prevTestimonial = () => {
   font-size: 20px;
   color: var(--main-white);
   background: var(--main-gray);
-  overflow: hidden;
+  overflow: auto;
   border: {
     style: solid;
     color: var(--blue-light);

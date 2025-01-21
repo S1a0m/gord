@@ -10,6 +10,13 @@ class Project(models.Model):
         ('elec', 'Electronic')
         # Ajoute d'autres catégories ici
     ]
+
+    STATUS_CHOICES = [
+        ('ready', 'Ready'),
+        ('in_progress', 'In Progress'),
+        ('aborted', 'Aborted'),
+    ]
+
     name = models.CharField(max_length=255)
     release_date = models.DateField()
     summary = models.TextField()
@@ -20,6 +27,11 @@ class Project(models.Model):
         default='dev'  # Catégorie par défaut
     )
     number_read = models.PositiveIntegerField(default=0)
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='in_progress',  # Par défaut, le projet est "ready"
+    )
 
     def __str__(self):
         return self.name

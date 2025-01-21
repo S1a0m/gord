@@ -1,11 +1,10 @@
 <script setup>
-import { RouterLink } from 'vue-router';
 import apiClient from '../axios';
 
 const props = defineProps([
     'name',
     'time',
-    'comments',
+    'status',
     'sommary',
     'details',
     'views',
@@ -28,13 +27,19 @@ const addNumViews = async () => {
         <div class="container">
             <header>
                 <div class="l-p">
-                    <span class="pubdate">Publié le <time datetime="">{{ props.time }}</time></span>
+                    <span class="pubdate">Publié ce <time datetime="">{{ props.time }}</time></span>
                 </div>
             </header>
             <div class="content">
                 <span class="title"><b>{{ props.name }}</b></span>
+                <div class="status">
+                    Statut: 
+                    <span v-if="props.status === 'ready'" >Prêt <span class="status-ready"></span></span>
+                    <span v-if="props.status === 'in_progress'"  >En cours <span class="status-inprogress"></span></span>
+                    <span v-if="props.status === 'aborted'" >Avorté <span class="status-aborted"></span></span>
+                </div>
                 <div class="sommary">{{ props.sommary }}</div>
-                <span class="li"><a :href="props.details" @click="addNumViews" title="Allez sur github"><span class="nk">Voir plus ...</span></a></span>
+                <span class="li"><a :href="props.details" @click="addNumViews" title="Allez sur github"><span class="nk">Consulter ...</span></a></span>
             </div>
             <footer>
                 <div class="views">
@@ -56,6 +61,9 @@ article {
     border-radius: 14px;
     border-color: var(--blue-light);
     box-shadow: .1em .1em .5em var(--hover-gray);
+    overflow: auto;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
     transition: {
         property: all;
         duration: 1000ms;
@@ -147,5 +155,41 @@ time, .likes {
     //justify-content: center;
     align-items: center;
 }
+
+.status {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4em;
+    }
+}
+
+.status-ready, .status-aborted, .status-inprogress {
+    display: block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+}
+
+.status-ready {
+    background:  #4CAF50;
+}
+
+.status-inprogress {
+    background: #FFC107;
+}
+
+.status-aborted {
+    background:  #F44336;
+}
+
 </style>
   

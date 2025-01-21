@@ -11,11 +11,11 @@ const route = useRoute();
 
 // Un mapping des noms de routes à leurs titres
 const pageTitles = {
-  home: 'home',
-  about: 'about',
+  home: 'acceuil',
+  about: 'à-propos',
   portfolio: 'portfolio',
   blog: 'blog',
-  projects: 'projects',
+  projects: 'projets',
   faq: 'faq',
   details: 'details',
 };

@@ -13,11 +13,11 @@ const closeMenu = () => {
     <span class="button-close" @click="closeMenu"><Button type="square-v1"><img src="./icons/close_blue.svg" alt=""></Button></span>
     <div class="menu">
       <nav>
-        <RouterLink to="/" @click="closeMenu"><Button type="menu-button"><span>Home</span></Button></RouterLink>
-        <RouterLink to="/about" @click="closeMenu"><Button type="menu-button"><span>About</span></Button></RouterLink>
+        <RouterLink to="/" @click="closeMenu"><Button type="menu-button"><span>Acceuil</span></Button></RouterLink>
+        <RouterLink to="/about" @click="closeMenu"><Button type="menu-button"><span>À propos</span></Button></RouterLink>
         <RouterLink to="/portfolio" @click="closeMenu"><Button type="menu-button"><span>Portfolio</span></Button></RouterLink>
         <RouterLink to="/blog" @click="closeMenu"><Button type="menu-button"><span>Blog</span></Button></RouterLink>
-        <RouterLink to="/projects" @click="closeMenu"><Button type="menu-button"><span>Projects</span></Button></RouterLink>
+        <RouterLink to="/projects" @click="closeMenu"><Button type="menu-button"><span>Projets</span></Button></RouterLink>
         <RouterLink to="/faq" @click="closeMenu"><Button type="menu-button"><span>FAQ</span></Button></RouterLink>
       </nav>
     </div>

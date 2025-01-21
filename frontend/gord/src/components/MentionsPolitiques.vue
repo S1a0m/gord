@@ -20,10 +20,10 @@ const closeMpg = () => {
 
             <h4>1. Éditeur du site</h4>
             <p>
-                Le site <a href="https://pxdev.amo-iv.tech">pxdev.amo-iv.tech</a> est édité par : Précieux Samson AMOUSSOU<br>
+                Le site <a href="https://pxepic.amo-iv.tech">pxepic.amo-iv.tech</a> est édité par : Précieux Samson AMOUSSOU<br>
                 <b>Adresse :</b> Tchinvié - Porto-Novo - Bénin<br>
                 <b>Responsable de la publication :</b> Précieux Samson AMOUSSOU<br>
-                <b>Email :</b> precieuxdev1@gmail.com<br>
+                <b>Email :</b> precieuxepic@gmail.com<br>
                 <b>Téléphone :</b> +229 01 54 14 12 87
             </p>
 
@@ -57,9 +57,9 @@ const closeMpg = () => {
 
             <h4>1. Responsable du traitement des données</h4>
             <p>
-                <b>Nom de la société :</b> PxDev.AMO-IV<br>
+                <b>Nom de la société :</b> PxEpic.AMO-IV<br>
                 <b>Adresse :</b> Tchinvié - Porto-Novo - Bénin<br>
-                <b>Email de contact :</b> precieuxdev1@gmail.com
+                <b>Email de contact :</b> precieuxepic@gmail.com
             </p>
 
             <h4>2. Types de données collectées</h4>
@@ -88,7 +88,7 @@ const closeMpg = () => {
 
             <p>
                 Pour exercer ces droits, veuillez nous contacter à l’adresse email : 
-                <a href="mailto:precieuxdev1@gmail.com">precieuxdev1@gmail.com</a>.
+                <a href="mailto:precieuxepic@gmail.com">precieuxepic@gmail.com</a>.
             </p>
         </div>
 

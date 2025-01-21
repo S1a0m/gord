@@ -19,6 +19,7 @@ def send_newsletter(modeladmin, request, queryset):
                 'title': newsletter.title,
                 'subject': newsletter.subject,
                 'content': newsletter.content,
+                'preview_url': newsletter.preview_url,
                 'unsubscribe_url': f"http://192.168.24.114/{subscriber.unsubscribe_token}",
             })
 # /api/newsletter/subscribe/unsubscribe/')}?token=
@@ -46,7 +47,7 @@ class SubscriberAdmin(admin.ModelAdmin):
 
 @admin.register(Newsletter)
 class NewsletterAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content', 'subject', 'publish_date', 'status')
+    list_display = ('title', 'content', 'subject', 'publish_date', 'preview_url', 'status')
     search_fields = ('title',)
     list_filter = ('publish_date',)
     actions = [send_newsletter]

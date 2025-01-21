@@ -65,6 +65,7 @@ onMounted(() => {
               :sommary="article.summary" 
               :details="article.link" 
               :views="article.number_read" 
+              :status="article.status"
             />
           </div>
           <!-- Message si aucun article dans cette catégorie -->

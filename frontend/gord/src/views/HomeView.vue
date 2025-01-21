@@ -31,17 +31,17 @@ onMounted(() => {
 </script>
 
 <template>
-        <ArticleBase active-page="home" section-color="section" section="Hola, je suis Précieux Samson AMOUSSOU">
+        <ArticleBase active-page="home" section-color="section" section="Dites moi ce à quoi vous pensez et j'en ferai des lignes de code. 🔥">
           <div class="backg-hov">
             <img src="../components/icons/hacker.jpg" alt="" class="avatar">
             <p>
-              Développeur Full-Stack et passionné de technologie, je propose mes services pour la conception et le développement de projets web, mobiles et logiciels sur mesure. Mon expertise couvre une large gamme de technologies, dont HTML, CSS, JavaScript, Vue.js, Django, Qt et Rust, ainsi que l'intégration de bases de données SQL. <br><br>
+              Développeur Full-Stack et passionné de technologie, je propose mes services pour la conception et le développement de projets web, mobiles et logiciels sur mesure. Mon expertise couvre une large gamme de technologies, dont HTML, CSS, JavaScript, Vue.js, Django, Qt, Rust et Flutter ainsi que l'intégration de bases de données SQL. <br><br>
 
               Je réalise des sites web modernes et performants, des applications mobiles intuitives et des outils logiciels robustes adaptés aux besoins spécifiques de mes clients. Par ailleurs, ma passion pour la cybersécurité me permet d'offrir des solutions sûres et optimisées. <br><br>
 
-              Que ce soit pour créer une interface utilisateur attractive, développer un système backend puissant ou sécuriser vos projets, je mets tout en œuvre pour répondre à vos attentes avec rigueur et créativité. Mon objectif est de transformer vos idées en solutions concrètes et efficaces. <br>
-              <span class="link"><RouterLink to="/about">Voir plus de détails en cliquant ici</RouterLink></span> <br><br>
-              Ou allez sur cette page pour <span class="link"><RouterLink to="/projects">consulter mes projets</RouterLink></span>
+              Que ce soit pour créer une interface utilisateur attractive, développer un système backend puissant ou sécuriser vos projets, je mets tout en œuvre pour répondre à vos attentes avec rigueur et créativité. Mon objectif est de transformer vos idées en solutions concrètes et efficaces. <br><br>
+              <span class="link">Voir plus de détails sur <RouterLink to="/about"> cette page</RouterLink>.</span> <br><br>
+              Ou allez sur cette page pour consulter <span class="link"><RouterLink to="/projects">mes projets</RouterLink>.</span>
             </p>
           </div>
         </ArticleBase>

@@ -30,7 +30,7 @@ const addNumViews = async () => {
     <ArticleBase active-page="blog" section-color="section" :section="props.section">
         <article>
             <header>
-                <span class="pubdate">Publié le <time datetime="">{{ props.time }}</time></span>
+                <span class="pubdate">Publié ce <time datetime="">{{ props.time }}</time></span>
                 <div class="views">
                     <img src="./icons/vue.svg" alt="">
                     <span>Vue: {{ props.views }}</span>

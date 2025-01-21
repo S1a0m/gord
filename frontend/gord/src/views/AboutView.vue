@@ -25,16 +25,27 @@ import ArticleBase from '../components/ArticleBase.vue';
       <ArticleBase active-page="about" section-color="section" section="Parcours Académiques et Professionnel">
         <div class="backg-hov">
         
-        J'ai obtenu tous mes diplômes au Bénin. <br><br>
+        Ah! Mon parcours.🤧 <br><br>
         <ul>
           <li>2013 - 2014: <b>Obtention du Certificat d'Études Primaires (CEP)</b> au CSCP "Saint Pierre et St Paul" de Porto-Novo</li>
           <li>2017 - 2018: <b>Obtention du Brevet d'Études du Premier Cycle (BEPC)</b> au CS "La Pyramide des arts" de Porto-Novo</li>
           <li>2020 - 2021: <b>Obtention du Baccalauréat (BAC) série C</b> au CEG "DAVIE" de Porto-Novo</li>
           <li>2024 - 2025: <b>Étudiant en 3ème année (L3) de Mathématique, Informatique et Applications</b> à la FAST de l'UAC</li>
         </ul><br>
-        <p>
-        Je travaille actuellement en tant que développeur freelance sur des plateformes bien connues comme <RouterLink to="/comeup"><b>ComeUp</b></RouterLink> et <RouterLink to="/upwork"><b>UpWork</b></RouterLink>.
-        </p>
+        </div>
+      </ArticleBase>
+    </div>
+    <div class="section">
+      <ArticleBase active-page="about" section-color="section" section="Projets en cours">
+        <div class="backg-hov">
+          <p>
+            Je travaille actuellement en tant que développeur freelance sur des plateformes bien connues comme <a href="https://comeup.com/"><b>ComeUp</b></a> , <a href="https://www.upwork.com/"><b>UpWork</b></a> et <a href="https://fr.fiverr.com/"><b>Fiver</b></a>.
+            Je suis également: 
+          </p><br>
+          <ul>
+            <li><b>Co-fondateur d'un projet de commerce numérique moderne:</b> Je collabore avec des partenaires pour révolutionner les solutions de commerce électronique.</li>
+            <li><b>Fondateur d'une entreprise émergente high tech (non officiel) nommée <a href="https://www.amo-iv.tech">AMO-IV</a>:</b> Nous développons actuellement notre premier produit, avec des mises à jour à suivre prochainement.</li>
+          </ul>
         </div>
       </ArticleBase>
     </div>
@@ -51,15 +62,16 @@ import ArticleBase from '../components/ArticleBase.vue';
                 <li>Rust</li>
                 <li>HTML, CSS & SASS</li>
                 <li>SQL</li>
+                <li>Dart</li>
               </ul>
             </li><br>
             <li><b>Frameworks</b>
               <ul>
                 <li>Django (REST Framework)</li>
-                <li>Vue-Ionic</li>
                 <li>Vue.js</li>
                 <li>Qt</li>
                 <li>Slint</li>
+                <li>Flutter</li>
               </ul>
             </li><br>
             <li><b>Autres</b>
@@ -71,11 +83,12 @@ import ArticleBase from '../components/ArticleBase.vue';
               </ul>
             </li><br>
           </ul>
+          Voila 😁.
         </div>
       </ArticleBase>
     </div>
-    <div class="go-projects">
-      <RouterLink to="/projects">Consulter mes projets.</RouterLink>
+    <div class="go-projects"> 
+      Consulter <RouterLink to="/projects">mes projets</RouterLink>.
     </div>
   </div>
 </template>

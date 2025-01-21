@@ -19,11 +19,11 @@ const toggleSummaryStat = () => {
     <LeftLayout>
         <header>
             <h3 @click="toggleSummaryStat">
-                Summary
+                Summaire
                 <img src="./icons/stat_minus.svg" alt="" v-if="summaryStat">
                 <img src="./icons/stat.svg" alt="" v-else>
             </h3>
-            <span class="pubdate">Publié le <time datetime="">{{ props.summaries.published_date }}</time></span>
+            <span class="pubdate">Publié ce <time datetime="">{{ props.summaries.published_date }}</time></span>
         </header>
         <Transition>
             <div class="content" v-if="summaryStat">

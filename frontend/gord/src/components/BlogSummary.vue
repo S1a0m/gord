@@ -23,7 +23,7 @@ const addNumViews = async () => {
   <div class="container" :style="{ backgroundImage: `url(${props.illustration})` }">
     <div class="summary">
       <nav>
-        <span class="title">Summary</span>
+        <span class="title">Sommaire</span>
         <span v-for="title in props.titles" :key="title.id">
           <RouterLink :to="{ path: `blog/${props.blogLink}`, query: { id: props.id }, hash: `#${title.summary_link}` }" @click="addNumViews"><span>&#9900; {{ title.summary }}</span></RouterLink>
         </span>

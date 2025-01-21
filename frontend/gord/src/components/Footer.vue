@@ -23,7 +23,7 @@ const closeMpg = () => {
                     </p>
                     <p class="details">
                         <span class="w-e">Whatsapp:</span><span>+229 01 54 14 12 87</span>
-                        <span class="w-e">Email:</span><span><a href="mailto:precieuxdev1@gmail.com">precieuxdev1@gmail.com</a></span>
+                        <span class="w-e">Email:</span><span><a href="mailto:precieuxepic@gmail.com">precieuxepic@gmail.com</a></span>
                     </p>
                 </div>
                 <div class="git-mentions">
@@ -39,7 +39,7 @@ const closeMpg = () => {
             </div>
         </div>
         <div class="copyright">
-            © 2025 PxDev. Tous droits réservés.
+            © 2025 PxEpic. Tous droits réservés.
         </div>
         <MentionsPolitiques v-if="showMp" @close-mp="closeMpg" class="fade-mp"/>
     </div>
